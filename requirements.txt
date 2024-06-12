@@ -1,0 +1,8 @@
+flask
+fastapi
+uvicorn
+streamlit
+duckdb
+pandas
+numpy
+scikit-learn
