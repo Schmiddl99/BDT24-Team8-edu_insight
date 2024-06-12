@@ -12,11 +12,11 @@ student_por = "Data/Predict student performance/student-por.csv"
 
 ### Create math students table from DataFrame
 
-conn.execute("CREATE TABLE student_mat AS SELECT * FROM 'Data/Predict student performance/student-mat.csv'")
+conn.execute("CREATE OR REPLACE TABLE student_mat AS SELECT * FROM 'Data/Predict student performance/student-mat.csv'")
 
 ### Create portuguese students table from DataFrame
 
-conn.execute("CREATE TABLE student_por AS SELECT * FROM 'Data/Predict student performance/student-por.csv'" )
+conn.execute("CREATE OR REPLACE TABLE student_por AS SELECT * FROM 'Data/Predict student performance/student-por.csv'" )
 
 ### Query to check if tables exist
 
