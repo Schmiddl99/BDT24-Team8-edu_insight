@@ -6,4 +6,9 @@ duckdb
 pandas
 numpy
 scikit-learn
-dask
+dask[complete]
+ipykernel
+matplotlib
+seaborn
+nbformat
+nbconvert

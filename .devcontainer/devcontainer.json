@@ -18,7 +18,8 @@
 			"settings": {},
 			"extensions": [
 				"streetsidesoftware.code-spell-checker",
-				"mechatroner.rainbow-csv"
+				"mechatroner.rainbow-csv",
+				"ms-toolsai.jupyter"
 			]
 		}
 	},
@@ -27,8 +28,13 @@
 	 "forwardPorts": [9000],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip3 install -r requirements.txt"
+	"postCreateCommand": "pip3 install -r requirements.txt",
 
+	"settings": {
+    //    "terminal.integrated.shell.linux": "/bin/bash",
+        "python.defaultInterpreterPath": "/bin/python3"
+    },
+	
 	// Configure tool-specific properties.
 	// "customizations": {},
 
