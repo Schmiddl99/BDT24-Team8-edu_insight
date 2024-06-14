@@ -15,20 +15,13 @@ conn = duckdb.connect(database = "database/bdt.duckdb" , read_only = False)
 
 ### extract student_perf datafram from ipynb
 
-# Path to your Jupyter Notebook
-notebook_path = 'transformation/student_perf.ipynb'
-
-# Extract variables
-notebook_vars = extract_variables_from_notebook(notebook_path)
-
-# Access the specific variable (assuming 'student_perf' is the variable you need)
-student_perf = notebook_vars['student_perf']
-
-# Now you can use the 'student_perf' variable in your script
-print(student_perf)
+notebook_path = 'transformation/student_perf.ipynb'                     # Path to your Jupyter Notebook
+notebook_vars = extract_variables_from_notebook(notebook_path)          # Extract variables
+student_perf = notebook_vars['student_perf']                            # Access the specific variable (assuming 'student_perf' is the variable you need)
+# print(student_perf)                                                     # Now you can use the 'student_perf' variable in your script
 
 
-### ingest data into duckdb database
+### Ingest data into duckdb database
 
 # Map Pandas dtypes to DuckDB SQL types
 dtype_mapping = {
@@ -39,10 +32,8 @@ dtype_mapping = {
     'string': 'VARCHAR'
 }
 
-# Define table name
+# Define variables
 table_name = 'student_perf'
-
-# Define DataFrame
 ddf = student_perf
 
 # Generate the CREATE TABLE statement dynamically
@@ -57,17 +48,15 @@ def generate_create_table_statement(table_name, df):
 
 # Generate the CREATE TABLE statement
 create_table_query = generate_create_table_statement(table_name=table_name, df=student_perf)
+conn.execute(create_table_query)                                        # Execute the CREATE TABLE statement
 
-# Execute the CREATE TABLE statement
-conn.execute(create_table_query)
-
-ddf = ddf.repartition(partition_size="100MB")                           # should be changed for prod but for our purposes its enough
+ddf = ddf.repartition(partition_size="100MB")                           # Should be changed for prod but for our purposes its enough
 
 # Function to ingest a partition into DuckDB
 def ingest_partition(conn, table_name, df):
-    conn.register("temp_df", df)                                        # create temp. table to transform the DataFrame into the right format
+    conn.register("temp_df", df)                                        # Create temp. table to transform the DataFrame into the right format
     conn.execute(f"INSERT INTO {table_name} SELECT * FROM temp_df")
-    conn.unregister("temp_df")
+    conn.unregister("temp_df")                                          # Delete temp. table to free up space
 
 # Iterate over partitions and ingest them
 for partition in ddf.to_delayed():
@@ -75,14 +64,13 @@ for partition in ddf.to_delayed():
     ingest_partition(conn, table_name=table_name, df=df_partition)
 
 # Verify the ingestion
-result = conn.execute("SELECT * FROM student_perf").fetchdf()
+result = conn.execute("SELECT * FROM student_perf LIMIT 10").fetchdf()
 print(result)
 
-### Query to check if tables exist
-
-tables = conn.execute("SHOW TABLES").fetchall()
 
 ### Print the list of tables
+
+tables = conn.execute("SHOW TABLES").fetchall()                         # Query to check if tables exist
 
 print("Tables in the database:")
 for table in tables:
