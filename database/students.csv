@@ -1,0 +1,851 @@
+studentID,course_name,subject,semester,grade,exam_date,absences_lectures,credits
+9270,Computer Science,Algorithms,4,18,2023-11-25,10,9
+9270,Computer Science,Cyber Security,4,20,2022-10-24,5,9
+9270,Computer Science,Mobile Computing,2,25,2022-12-02,2,6
+9270,Computer Science,Computer Graphics,4,17,2023-12-21,20,0
+9270,Computer Science,Cloud Computing,3,4,2023-05-18,0,0
+9270,Computer Science,Software Engineering,4,23,2023-01-02,18,9
+9270,Computer Science,Programming,3,11,2024-03-01,10,0
+9270,Computer Science,Web Development,1,16,2022-09-09,14,0
+9270,Computer Science,Data Mining,1,1,2022-10-12,19,0
+9270,Computer Science,Human-Computer Interaction,3,5,2022-09-11,10,0
+9270,Computer Science,Operating Systems,4,18,2023-09-12,20,6
+9270,Computer Science,Databases,1,7,2022-10-18,4,0
+9270,Computer Science,Math,4,30,2023-05-27,1,9
+9270,Computer Science,Computer Networks,2,9,2023-01-20,17,0
+5070,Mathematics,Number Theory,2,9,2023-07-09,12,0
+5070,Mathematics,Geometry,2,6,2023-04-18,4,0
+5070,Mathematics,Mathematical Modeling,3,4,2023-07-12,19,0
+5070,Mathematics,Mathematical Logic,3,2,2024-04-22,15,0
+5070,Mathematics,Probability,1,21,2023-10-09,0,6
+5070,Mathematics,Calculus,2,14,2022-11-01,14,0
+5070,Mathematics,Statistics,4,25,2023-06-15,13,12
+5070,Mathematics,Abstract Algebra,4,11,2023-06-02,3,0
+5070,Mathematics,Real Analysis,4,29,2023-01-18,7,6
+5070,Mathematics,Combinatorics,4,17,2024-01-26,16,0
+5070,Mathematics,Topology,2,20,2023-04-28,18,9
+8547,Business Administration,Supply Chain Management,2,23,2023-09-05,8,9
+8547,Business Administration,Public Law,2,19,2023-05-01,14,12
+8547,Business Administration,Strategic Management,4,11,2022-10-04,19,0
+8547,Business Administration,Business Law,2,20,2024-05-15,1,9
+7051,Physics,Particle Physics,4,15,2024-01-20,4,0
+7051,Physics,Thermodynamics,4,28,2024-01-06,10,9
+7051,Physics,Nuclear Physics,1,8,2022-09-06,7,0
+7051,Physics,Classical Mechanics,2,6,2023-06-13,15,0
+7051,Physics,Geophysics,2,11,2023-09-02,20,0
+7051,Physics,Plasma Physics,4,22,2023-08-29,18,12
+7051,Physics,Optics,2,12,2023-08-24,3,0
+7051,Physics,Astrophysics,1,27,2023-03-20,5,12
+7051,Physics,Condensed Matter Physics,1,8,2023-01-29,7,0
+7051,Physics,Electromagnetism,2,0,2023-09-04,14,0
+7051,Physics,Solid State Physics,4,2,2022-10-14,10,0
+7051,Physics,Quantum Mechanics,1,12,2023-08-05,1,0
+7051,Physics,Mathematical Physics,1,16,2023-05-28,4,0
+7051,Physics,Biophysics,2,29,2023-07-09,11,12
+5682,Mathematics,Real Analysis,4,14,2023-07-16,2,0
+5682,Mathematics,Probability,2,28,2022-09-06,13,12
+5682,Mathematics,Mathematical Logic,4,21,2023-01-12,2,6
+5682,Mathematics,Complex Analysis,2,6,2024-01-17,18,0
+5682,Mathematics,Combinatorics,2,11,2024-04-07,8,0
+5682,Mathematics,Discrete Mathematics,3,10,2024-05-22,16,0
+5682,Mathematics,Mathematical Modeling,4,3,2024-01-28,14,0
+5682,Mathematics,Differential Equations,2,6,2023-03-15,7,0
+5682,Mathematics,Geometry,1,10,2023-12-22,16,0
+2370,Data Science,Quantitative methods,1,29,2024-05-16,8,9
+2370,Data Science,Statistical Models,1,13,2023-11-24,9,0
+2370,Data Science,Deep Learning,4,24,2023-03-02,4,9
+2370,Data Science,Data Engineering,1,28,2023-03-01,12,12
+2370,Data Science,Algorithms,3,27,2023-08-30,20,9
+2370,Data Science,Law and data,2,31,2023-01-29,0,9
+2370,Data Science,Statistical Methods,4,27,2022-11-10,20,6
+4862,Computer Science,Software Engineering,2,23,2023-10-27,6,12
+4862,Computer Science,Data Mining,2,19,2023-04-10,5,9
+4862,Computer Science,Math,3,25,2022-10-29,19,6
+4862,Computer Science,Algorithms,2,3,2023-04-10,11,0
+4862,Computer Science,Human-Computer Interaction,1,3,2023-02-25,8,0
+4862,Computer Science,Databases,4,2,2023-05-27,12,0
+4862,Computer Science,Mobile Computing,3,9,2023-03-13,10,0
+4862,Computer Science,Operating Systems,4,22,2022-12-03,0,6
+4862,Computer Science,Cyber Security,3,12,2022-12-18,18,0
+4862,Computer Science,Data Structures,3,31,2024-01-03,3,9
+4862,Computer Science,Web Development,3,26,2024-02-02,17,12
+4862,Computer Science,Artificial Intelligence,3,7,2023-07-13,4,0
+4862,Computer Science,Computer Graphics,1,0,2023-08-16,3,0
+4862,Computer Science,Programming,1,30,2024-04-03,4,9
+4862,Computer Science,Computer Networks,1,22,2023-09-21,9,12
+9831,Data Science,Data Engineering,1,27,2023-05-08,9,9
+9831,Data Science,Machine Learning,3,31,2024-02-17,4,12
+9831,Data Science,Data Visualization,1,7,2024-04-27,9,0
+9831,Data Science,Introduction to machine learning,1,26,2024-02-28,11,6
+9831,Data Science,Statistical Methods,1,28,2023-10-04,4,9
+9831,Data Science,Natural Language Processing,4,1,2023-08-22,4,0
+9831,Data Science,Law and data,1,19,2023-06-05,3,12
+4832,Physics,Optics,3,8,2023-07-08,14,0
+4832,Physics,Electromagnetism,3,31,2024-04-15,10,6
+4832,Physics,Solid State Physics,1,29,2022-10-29,5,6
+4832,Physics,Astrophysics,1,9,2022-12-08,12,0
+4832,Physics,Particle Physics,3,27,2023-08-14,20,12
+4832,Physics,Thermodynamics,3,17,2023-01-31,20,0
+4832,Physics,Statistical Mechanics,2,23,2023-10-13,15,12
+4832,Physics,Biophysics,1,5,2024-04-19,13,0
+4832,Physics,Nuclear Physics,2,4,2023-09-18,20,0
+4832,Physics,Computational Physics,2,22,2023-12-06,13,12
+4752,Computer Science,Math,1,11,2023-04-01,20,0
+4752,Computer Science,Cloud Computing,3,13,2023-02-11,1,0
+4752,Computer Science,Computer Networks,4,6,2022-09-11,1,0
+4752,Computer Science,Computer Graphics,4,9,2024-02-07,3,0
+4752,Computer Science,Artificial Intelligence,3,3,2024-03-27,6,0
+4752,Computer Science,Software Engineering,3,22,2022-10-08,15,9
+4752,Computer Science,Mobile Computing,3,0,2023-03-18,11,0
+3580,Business Administration,Accounting,3,17,2023-05-12,0,0
+3580,Business Administration,International Business,1,10,2022-12-06,15,0
+3580,Business Administration,Supply Chain Management,2,19,2022-09-20,15,6
+3580,Business Administration,Operations Management,1,0,2024-06-25,19,0
+3580,Business Administration,Human Resource Management,3,9,2023-11-19,16,0
+3580,Business Administration,Microeconomics,4,5,2022-11-02,19,0
+3580,Business Administration,Business Law,1,26,2023-09-30,14,6
+3580,Business Administration,Math,1,7,2022-10-01,11,0
+3580,Business Administration,Strategic Management,1,1,2023-03-24,11,0
+3580,Business Administration,Marketing,2,9,2023-01-18,5,0
+3580,Business Administration,Public Law,1,10,2024-03-16,3,0
+3580,Business Administration,Finance,3,4,2023-09-26,17,0
+3580,Business Administration,Organizational Behavior,1,0,2024-02-18,8,0
+3580,Business Administration,Business Ethics,1,31,2023-09-13,0,6
+2900,Business Administration,Organizational Behavior,3,6,2022-09-21,4,0
+1333,Mechanical Engineering,Math,2,12,2022-11-04,5,0
+1333,Mechanical Engineering,Mechanics of Materials,3,1,2022-12-01,20,0
+1333,Mechanical Engineering,Energy Systems,1,5,2023-04-04,5,0
+5041,Physics,Nuclear Physics,3,12,2024-03-22,14,0
+5041,Physics,Plasma Physics,3,7,2023-11-03,10,0
+5041,Physics,Condensed Matter Physics,2,4,2024-04-11,20,0
+5041,Physics,Computational Physics,4,21,2024-02-10,9,12
+5041,Physics,Particle Physics,1,27,2023-03-20,2,12
+5041,Physics,Biophysics,4,31,2023-03-16,10,12
+5041,Physics,Electromagnetism,1,7,2024-01-02,20,0
+5041,Physics,Quantum Mechanics,1,25,2024-01-06,1,12
+5041,Physics,Statistical Mechanics,4,17,2023-04-18,13,0
+5041,Physics,Optics,1,25,2024-04-14,8,9
+5041,Physics,Geophysics,3,15,2023-08-02,9,0
+5041,Physics,Solid State Physics,2,12,2022-09-05,19,0
+6793,Business Administration,Marketing,1,5,2024-06-22,5,0
+6793,Business Administration,Management,4,20,2023-04-14,0,9
+6793,Business Administration,International Business,2,26,2023-03-03,10,6
+6793,Business Administration,Human Resource Management,4,7,2023-02-04,3,0
+6793,Business Administration,Organizational Behavior,1,29,2023-12-23,10,6
+6793,Business Administration,Supply Chain Management,4,14,2022-09-23,11,0
+6793,Business Administration,Accounting,1,4,2024-05-03,7,0
+6793,Business Administration,Operations Management,4,11,2023-02-05,5,0
+6793,Business Administration,Microeconomics,2,4,2023-10-27,7,0
+6793,Business Administration,Public Law,3,12,2022-12-25,9,0
+6793,Business Administration,Finance,4,7,2024-02-13,0,0
+9497,Mechanical Engineering,Solid Mechanics,4,18,2023-08-24,6,6
+9497,Mechanical Engineering,Energy Systems,3,7,2023-12-30,7,0
+9497,Mechanical Engineering,Heat Transfer,4,3,2023-03-20,15,0
+9497,Mechanical Engineering,Fluid Mechanics,1,31,2023-11-25,1,9
+9497,Mechanical Engineering,Control Systems,2,4,2023-01-15,7,0
+9497,Mechanical Engineering,Thermodynamics,2,24,2023-05-27,15,6
+9497,Mechanical Engineering,Mechanical Design,1,22,2022-10-11,4,12
+9497,Mechanical Engineering,Manufacturing Processes,2,2,2024-01-18,3,0
+9497,Mechanical Engineering,Dynamics,2,23,2024-05-24,12,12
+9497,Mechanical Engineering,Vibration Analysis,1,17,2023-03-21,15,0
+9497,Mechanical Engineering,Robotics,3,29,2024-05-02,0,12
+9497,Mechanical Engineering,CAD/CAM,4,26,2024-04-20,8,12
+9497,Mechanical Engineering,Physics,4,6,2023-02-28,9,0
+4342,Computer Science,Programming,1,0,2023-09-04,0,0
+4342,Computer Science,Artificial Intelligence,2,11,2024-02-27,17,0
+4342,Computer Science,Databases,1,3,2023-08-11,18,0
+4342,Computer Science,Computer Graphics,3,12,2023-07-15,14,0
+4342,Computer Science,Web Development,2,24,2023-03-21,8,6
+4342,Computer Science,Computer Networks,4,21,2023-04-11,6,9
+4342,Computer Science,Data Mining,2,16,2024-04-27,14,0
+7451,Data Science,Big Data Technologies,1,28,2023-05-29,19,9
+7451,Data Science,Quantitative methods,4,9,2023-05-01,13,0
+7451,Data Science,Programming,3,18,2024-01-06,17,6
+7451,Data Science,Data Engineering,3,14,2023-07-09,5,0
+7451,Data Science,Time Series Analysis,2,4,2022-09-17,4,0
+7451,Data Science,Algorithms,1,21,2023-03-29,5,6
+7451,Data Science,Data Visualization,3,6,2023-09-11,13,0
+7451,Data Science,Law and data,4,2,2023-06-03,17,0
+7451,Data Science,Deep Learning,1,26,2023-09-30,15,9
+8766,Computer Science,Software Engineering,1,2,2023-03-21,1,0
+8766,Computer Science,Math,3,23,2023-10-19,4,6
+8766,Computer Science,Human-Computer Interaction,3,11,2023-06-01,0,0
+8766,Computer Science,Operating Systems,2,21,2023-07-10,3,12
+8766,Computer Science,Cloud Computing,3,20,2022-11-15,15,6
+8766,Computer Science,Algorithms,3,29,2022-12-28,14,6
+8766,Computer Science,Artificial Intelligence,3,14,2023-05-20,19,0
+8766,Computer Science,Programming,4,26,2024-03-13,12,12
+8766,Computer Science,Computer Graphics,2,9,2024-04-09,1,0
+8766,Computer Science,Data Mining,4,3,2023-01-05,15,0
+8766,Computer Science,Computer Networks,1,15,2023-09-01,13,0
+4595,Mechanical Engineering,Mechanics of Materials,4,13,2023-11-09,13,0
+4595,Mechanical Engineering,Robotics,4,31,2023-10-02,1,6
+4595,Mechanical Engineering,Math,1,5,2023-07-04,0,0
+4595,Mechanical Engineering,Physics,4,19,2024-05-20,5,6
+4595,Mechanical Engineering,Energy Systems,2,2,2023-02-01,17,0
+4595,Mechanical Engineering,Control Systems,4,16,2024-06-05,15,0
+4595,Mechanical Engineering,Solid Mechanics,3,21,2024-05-14,9,12
+7869,Mechanical Engineering,Fluid Mechanics,2,2,2022-11-20,8,0
+8484,Physics,Statistical Mechanics,4,20,2023-01-11,1,9
+8484,Physics,Particle Physics,4,31,2023-04-05,12,9
+8925,Mechanical Engineering,Physics,1,0,2023-08-22,2,0
+8925,Mechanical Engineering,CAD/CAM,1,29,2023-08-15,13,12
+8925,Mechanical Engineering,Vibration Analysis,2,31,2023-01-03,0,9
+8925,Mechanical Engineering,Thermodynamics,2,21,2023-08-15,20,12
+8925,Mechanical Engineering,Manufacturing Processes,2,5,2023-10-20,20,0
+8925,Mechanical Engineering,Mechanics of Materials,4,30,2023-02-17,0,9
+2340,Business Administration,Accounting,2,24,2023-04-19,12,12
+2340,Business Administration,Business Ethics,4,20,2022-11-12,16,12
+2340,Business Administration,Public Law,4,8,2022-11-17,18,0
+4129,Mechanical Engineering,Control Systems,4,7,2024-04-25,3,0
+4129,Mechanical Engineering,Robotics,3,18,2022-10-19,13,9
+4129,Mechanical Engineering,Math,2,0,2023-06-12,14,0
+4129,Mechanical Engineering,Physics,2,15,2023-05-04,0,0
+4129,Mechanical Engineering,Energy Systems,2,28,2023-05-05,3,6
+4129,Mechanical Engineering,CAD/CAM,1,18,2024-02-20,0,12
+4129,Mechanical Engineering,Fluid Mechanics,4,17,2023-03-03,13,0
+4129,Mechanical Engineering,Mechanical Design,2,22,2024-01-11,16,9
+4129,Mechanical Engineering,Vibration Analysis,1,13,2023-02-16,19,0
+4129,Mechanical Engineering,Heat Transfer,2,11,2023-08-21,15,0
+4129,Mechanical Engineering,Mechanics of Materials,2,15,2022-09-11,4,0
+4129,Mechanical Engineering,Dynamics,2,3,2023-03-27,8,0
+5218,Business Administration,Public Law,3,30,2023-03-13,8,6
+3406,Mathematics,Topology,4,30,2022-11-19,4,6
+3406,Mathematics,Real Analysis,2,21,2024-04-04,19,9
+3406,Mathematics,Differential Equations,1,12,2023-12-29,7,0
+3406,Mathematics,Geometry,2,3,2023-10-05,12,0
+3406,Mathematics,Mathematical Modeling,3,16,2023-03-24,6,0
+3406,Mathematics,Combinatorics,4,4,2023-02-21,2,0
+3406,Mathematics,Abstract Algebra,3,2,2023-12-04,2,0
+3406,Mathematics,Calculus,3,9,2023-08-15,9,0
+3406,Mathematics,Discrete Mathematics,2,20,2023-02-24,11,12
+7861,Mechanical Engineering,Dynamics,2,21,2024-05-25,16,12
+7861,Mechanical Engineering,Heat Transfer,2,9,2023-12-22,9,0
+7861,Mechanical Engineering,Mechanics of Materials,3,12,2023-02-28,6,0
+7861,Mechanical Engineering,Robotics,3,23,2022-10-08,18,9
+7861,Mechanical Engineering,Solid Mechanics,3,11,2024-01-13,8,0
+7861,Mechanical Engineering,Manufacturing Processes,2,31,2023-05-02,4,9
+7861,Mechanical Engineering,Fluid Mechanics,1,24,2023-11-12,18,9
+7861,Mechanical Engineering,Physics,3,11,2023-10-11,7,0
+6352,Computer Science,Data Structures,1,21,2023-07-22,9,6
+6352,Computer Science,Cyber Security,1,8,2024-01-06,8,0
+6352,Computer Science,Artificial Intelligence,2,30,2024-05-22,3,9
+6352,Computer Science,Data Mining,2,7,2024-04-22,5,0
+6352,Computer Science,Programming,1,5,2023-06-28,13,0
+6352,Computer Science,Mobile Computing,4,23,2023-07-30,9,6
+6352,Computer Science,Cloud Computing,3,18,2023-07-28,16,6
+6352,Computer Science,Computer Graphics,3,14,2022-09-20,7,0
+6352,Computer Science,Human-Computer Interaction,4,26,2023-11-30,12,6
+6352,Computer Science,Operating Systems,3,25,2023-06-20,3,9
+6352,Computer Science,Computer Networks,2,16,2023-03-12,6,0
+6352,Computer Science,Databases,3,27,2022-11-05,20,6
+6352,Computer Science,Math,3,26,2023-02-13,7,9
+6352,Computer Science,Software Engineering,2,29,2023-06-20,5,6
+6352,Computer Science,Algorithms,2,2,2023-06-10,2,0
+4844,Mathematics,Mathematical Logic,3,20,2024-05-09,7,9
+4844,Mathematics,Discrete Mathematics,1,10,2022-11-15,0,0
+4844,Mathematics,Geometry,3,18,2024-06-25,15,6
+4844,Mathematics,Real Analysis,2,17,2023-06-15,1,0
+4844,Mathematics,Number Theory,3,1,2023-01-03,4,0
+4844,Mathematics,Abstract Algebra,2,22,2024-06-13,16,6
+1970,Business Administration,Accounting,3,22,2023-10-10,2,9
+1970,Business Administration,Supply Chain Management,4,14,2022-11-15,4,0
+1970,Business Administration,International Business,2,6,2024-03-13,11,0
+1970,Business Administration,Business Law,1,18,2024-01-15,8,6
+2776,Data Science,Time Series Analysis,4,27,2022-10-29,10,12
+2776,Data Science,Data Engineering,2,18,2022-12-02,6,12
+2776,Data Science,Introduction to machine learning,2,30,2023-03-01,0,12
+2776,Data Science,Cloud Computing,3,27,2023-07-21,4,6
+2776,Data Science,Machine Learning,1,22,2022-12-28,9,9
+2776,Data Science,Law and data,4,27,2023-02-27,7,9
+2776,Data Science,Quantitative methods,1,27,2023-05-10,13,12
+2776,Data Science,Statistical Methods,3,17,2023-06-13,10,0
+2776,Data Science,Deep Learning,1,4,2022-11-16,5,0
+2776,Data Science,Data Visualization,2,27,2024-04-09,3,6
+2776,Data Science,Algorithms,3,27,2024-03-04,3,12
+2776,Data Science,Programming,2,27,2023-09-02,2,12
+2776,Data Science,Statistical Models,3,5,2024-06-16,1,0
+9406,Mechanical Engineering,Math,2,24,2023-09-07,17,12
+9406,Mechanical Engineering,Control Systems,3,10,2022-11-17,7,0
+9406,Mechanical Engineering,Mechanics of Materials,4,28,2024-03-03,4,12
+9406,Mechanical Engineering,Material Science,2,22,2024-03-11,10,6
+9406,Mechanical Engineering,Physics,3,31,2024-01-15,8,9
+9406,Mechanical Engineering,Dynamics,4,8,2024-03-29,7,0
+9406,Mechanical Engineering,Fluid Mechanics,2,18,2024-03-06,18,6
+9406,Mechanical Engineering,Mechanical Design,3,20,2024-01-29,17,9
+9406,Mechanical Engineering,Thermodynamics,3,12,2023-09-14,17,0
+9406,Mechanical Engineering,CAD/CAM,4,27,2024-02-16,9,9
+9406,Mechanical Engineering,Manufacturing Processes,4,4,2024-06-23,7,0
+6284,Data Science,Data Engineering,4,21,2023-08-12,18,9
+6284,Data Science,Quantitative methods,4,27,2024-01-14,2,12
+6284,Data Science,Machine Learning,2,1,2023-02-03,6,0
+6284,Data Science,Algorithms,1,13,2023-01-20,0,0
+6284,Data Science,Statistical Methods,1,0,2024-05-11,1,0
+6284,Data Science,Programming,2,25,2023-03-02,3,12
+6284,Data Science,Statistical Models,4,24,2023-05-22,7,12
+6284,Data Science,Data Visualization,1,6,2023-04-18,20,0
+4326,Business Administration,Marketing,3,1,2023-03-02,5,0
+4326,Business Administration,Macroeconomics,1,1,2023-08-13,8,0
+4326,Business Administration,Business Ethics,2,11,2024-04-12,19,0
+4326,Business Administration,Management,2,20,2024-05-31,5,9
+4326,Business Administration,Accounting,4,14,2023-12-03,3,0
+4326,Business Administration,Operations Management,4,2,2023-05-09,2,0
+4326,Business Administration,Organizational Behavior,3,7,2023-10-29,18,0
+4326,Business Administration,Supply Chain Management,2,6,2022-12-05,15,0
+4326,Business Administration,Business Law,3,22,2022-12-13,19,9
+9564,Computer Science,Software Engineering,3,23,2023-07-26,8,6
+9564,Computer Science,Artificial Intelligence,4,30,2023-01-20,16,6
+9564,Computer Science,Web Development,2,11,2023-11-24,10,0
+9564,Computer Science,Data Mining,3,15,2022-11-18,13,0
+9564,Computer Science,Computer Networks,4,1,2023-10-17,5,0
+9564,Computer Science,Math,2,25,2023-10-08,0,6
+9564,Computer Science,Algorithms,2,14,2023-02-09,16,0
+9564,Computer Science,Cyber Security,2,5,2023-02-28,11,0
+9564,Computer Science,Data Structures,1,17,2023-09-08,16,0
+9564,Computer Science,Databases,2,7,2022-10-06,9,0
+4171,Computer Science,Operating Systems,4,13,2024-01-08,12,0
+4171,Computer Science,Databases,2,7,2023-11-24,14,0
+4171,Computer Science,Mobile Computing,1,8,2023-06-15,15,0
+4171,Computer Science,Artificial Intelligence,2,12,2022-12-19,8,0
+4171,Computer Science,Data Structures,1,23,2023-10-19,8,12
+4171,Computer Science,Cloud Computing,4,9,2022-11-18,9,0
+4171,Computer Science,Web Development,3,0,2023-02-25,12,0
+4171,Computer Science,Programming,3,20,2023-06-28,6,12
+4171,Computer Science,Cyber Security,4,22,2023-10-17,18,6
+4171,Computer Science,Computer Graphics,3,16,2022-09-03,3,0
+4171,Computer Science,Computer Networks,1,26,2024-04-08,20,6
+4171,Computer Science,Algorithms,3,17,2023-01-30,2,0
+3590,Data Science,Algorithms,3,2,2023-05-06,1,0
+3590,Data Science,Introduction to machine learning,3,16,2023-05-18,7,0
+3590,Data Science,Statistical Models,2,0,2024-04-15,4,0
+3590,Data Science,Big Data Technologies,1,16,2023-03-17,7,0
+3590,Data Science,Cloud Computing,2,22,2023-04-07,9,9
+8017,Mathematics,Mathematical Modeling,4,21,2024-06-02,8,9
+8017,Mathematics,Probability,2,5,2023-04-26,16,0
+8017,Mathematics,Complex Analysis,2,16,2022-12-26,13,0
+8017,Mathematics,Topology,1,2,2022-11-17,17,0
+8017,Mathematics,Number Theory,2,31,2023-02-21,17,6
+8017,Mathematics,Real Analysis,2,16,2022-12-23,4,0
+8017,Mathematics,Linear Algebra,1,8,2023-03-10,13,0
+8017,Mathematics,Analysis,3,2,2022-12-08,1,0
+8017,Mathematics,Differential Equations,3,3,2023-03-14,6,0
+8017,Mathematics,Calculus,3,3,2023-09-04,1,0
+8017,Mathematics,Combinatorics,4,5,2023-02-04,15,0
+8017,Mathematics,Statistics,3,16,2024-06-21,19,0
+4301,Business Administration,Finance,1,16,2024-05-25,2,0
+4301,Business Administration,Operations Management,3,27,2023-10-10,3,9
+4301,Business Administration,Marketing,1,11,2023-08-26,8,0
+4301,Business Administration,Microeconomics,3,19,2024-04-02,16,6
+4301,Business Administration,Accounting,4,23,2023-08-25,11,6
+4301,Business Administration,Math,1,16,2023-09-23,17,0
+4301,Business Administration,International Business,2,13,2023-02-22,1,0
+4301,Business Administration,Business Ethics,2,20,2024-02-24,7,6
+4301,Business Administration,Macroeconomics,3,6,2023-04-11,5,0
+4301,Business Administration,Supply Chain Management,3,3,2023-09-19,18,0
+1588,Physics,Astrophysics,3,0,2023-12-07,7,0
+1588,Physics,Plasma Physics,4,16,2022-11-30,14,0
+1588,Physics,Statistical Mechanics,3,18,2024-05-04,7,6
+1588,Physics,Quantum Mechanics,1,10,2023-01-24,6,0
+1588,Physics,Geophysics,1,21,2023-05-26,0,6
+1588,Physics,Solid State Physics,4,17,2024-06-22,4,0
+9766,Data Science,Deep Learning,3,1,2023-05-22,3,0
+9766,Data Science,Machine Learning,4,11,2023-01-27,9,0
+9766,Data Science,Big Data Technologies,2,24,2024-05-15,10,6
+9766,Data Science,Data Mining,3,18,2024-04-15,12,6
+9766,Data Science,Cloud Computing,2,6,2024-05-12,5,0
+9766,Data Science,Law and data,4,3,2023-11-04,13,0
+9766,Data Science,Algorithms,1,17,2023-04-07,10,0
+9766,Data Science,Programming,3,15,2024-01-18,2,0
+9766,Data Science,Data Engineering,2,7,2023-03-04,20,0
+9766,Data Science,Introduction to machine learning,4,4,2024-04-19,4,0
+9766,Data Science,Statistical Models,3,4,2023-02-23,1,0
+9766,Data Science,Natural Language Processing,1,0,2022-10-27,12,0
+9766,Data Science,Data Visualization,4,21,2024-01-05,10,6
+9766,Data Science,Statistical Methods,3,2,2023-09-30,5,0
+1546,Data Science,Data Engineering,3,1,2022-10-19,9,0
+1546,Data Science,Time Series Analysis,4,1,2023-12-08,6,0
+1546,Data Science,Machine Learning,1,16,2023-07-13,5,0
+1546,Data Science,Statistical Methods,1,15,2023-09-21,20,0
+1546,Data Science,Law and data,3,15,2024-02-23,5,0
+1546,Data Science,Natural Language Processing,3,28,2023-08-24,19,9
+1546,Data Science,Programming,3,16,2024-06-10,15,0
+1546,Data Science,Data Mining,2,4,2023-06-14,8,0
+1546,Data Science,Introduction to machine learning,2,21,2024-02-07,10,9
+1546,Data Science,Quantitative methods,3,31,2023-12-09,3,6
+9093,Business Administration,Accounting,3,11,2023-06-09,1,0
+8084,Computer Science,Cloud Computing,3,16,2022-11-04,6,0
+8084,Computer Science,Algorithms,1,11,2023-02-05,17,0
+8084,Computer Science,Artificial Intelligence,2,12,2023-11-14,12,0
+8084,Computer Science,Mobile Computing,4,1,2023-02-25,2,0
+8084,Computer Science,Data Structures,4,19,2023-06-30,19,12
+8084,Computer Science,Human-Computer Interaction,3,31,2023-07-28,7,9
+8084,Computer Science,Cyber Security,3,21,2023-11-02,5,12
+8084,Computer Science,Operating Systems,3,11,2023-07-08,17,0
+8084,Computer Science,Software Engineering,1,5,2022-10-17,13,0
+8084,Computer Science,Computer Networks,3,26,2024-04-05,7,12
+8084,Computer Science,Databases,3,1,2024-02-05,19,0
+8084,Computer Science,Computer Graphics,1,29,2024-03-26,14,9
+8084,Computer Science,Programming,2,31,2024-02-14,5,9
+5594,Mechanical Engineering,Mechanics of Materials,2,16,2023-07-06,0,0
+5594,Mechanical Engineering,Thermodynamics,3,12,2024-01-01,0,0
+5594,Mechanical Engineering,Robotics,3,11,2024-04-24,18,0
+5594,Mechanical Engineering,Fluid Mechanics,2,5,2023-01-11,12,0
+5594,Mechanical Engineering,Manufacturing Processes,3,11,2024-01-24,0,0
+8474,Computer Science,Computer Networks,2,26,2022-10-26,1,6
+8474,Computer Science,Artificial Intelligence,3,31,2022-12-20,2,6
+8474,Computer Science,Operating Systems,4,30,2023-11-16,5,9
+8474,Computer Science,Cyber Security,4,30,2022-10-28,14,6
+8474,Computer Science,Data Structures,1,22,2023-03-22,17,12
+8474,Computer Science,Computer Graphics,2,17,2024-01-31,13,0
+8474,Computer Science,Databases,3,23,2023-05-11,16,6
+8474,Computer Science,Software Engineering,2,29,2023-08-20,17,6
+8474,Computer Science,Programming,2,31,2022-10-12,13,12
+8474,Computer Science,Math,3,15,2022-09-30,6,0
+8474,Computer Science,Data Mining,4,11,2023-04-16,16,0
+8466,Physics,Plasma Physics,3,25,2022-11-24,10,6
+8466,Physics,Solid State Physics,2,5,2024-06-09,15,0
+8466,Physics,Geophysics,1,21,2023-07-20,10,6
+3302,Computer Science,Cyber Security,1,14,2024-06-14,9,0
+3302,Computer Science,Web Development,2,21,2024-03-17,17,9
+3302,Computer Science,Math,2,28,2023-04-13,7,12
+3302,Computer Science,Computer Networks,1,6,2023-11-30,10,0
+3302,Computer Science,Mobile Computing,4,16,2024-01-20,20,0
+3302,Computer Science,Artificial Intelligence,1,16,2022-10-26,15,0
+3302,Computer Science,Programming,1,2,2024-01-15,16,0
+3302,Computer Science,Software Engineering,2,5,2022-10-08,16,0
+8542,Business Administration,Microeconomics,3,16,2022-10-22,10,0
+8542,Business Administration,Business Ethics,4,25,2023-08-29,12,6
+8542,Business Administration,Organizational Behavior,1,0,2023-05-14,20,0
+8542,Business Administration,Public Law,3,25,2022-12-25,1,12
+8542,Business Administration,Human Resource Management,1,24,2024-06-10,13,6
+8542,Business Administration,Finance,3,3,2023-08-05,5,0
+8542,Business Administration,Supply Chain Management,1,18,2023-12-15,13,12
+8542,Business Administration,Accounting,4,20,2023-10-27,4,12
+8542,Business Administration,Math,3,2,2023-06-19,2,0
+8542,Business Administration,Management,4,29,2023-04-02,15,12
+9069,Business Administration,Marketing,1,24,2022-10-28,12,9
+9069,Business Administration,Organizational Behavior,3,22,2024-06-22,5,9
+9069,Business Administration,Supply Chain Management,2,12,2024-04-23,17,0
+9069,Business Administration,Finance,4,30,2023-01-01,9,6
+9069,Business Administration,International Business,4,28,2023-11-07,14,12
+9069,Business Administration,Management,2,16,2024-03-24,5,0
+9069,Business Administration,Business Ethics,4,23,2024-05-19,12,6
+9069,Business Administration,Microeconomics,3,14,2022-11-17,2,0
+9069,Business Administration,Accounting,4,27,2022-09-11,19,9
+9069,Business Administration,Strategic Management,1,21,2024-04-16,3,6
+9069,Business Administration,Public Law,1,27,2023-10-31,10,9
+9069,Business Administration,Math,2,11,2023-11-17,15,0
+9069,Business Administration,Human Resource Management,1,24,2022-12-08,8,6
+5998,Data Science,Data Mining,3,26,2023-08-11,20,12
+8683,Business Administration,Strategic Management,2,10,2024-06-19,16,0
+8683,Business Administration,Microeconomics,2,29,2024-01-23,19,6
+8683,Business Administration,Business Law,3,4,2023-12-16,16,0
+8683,Business Administration,Business Ethics,3,12,2023-02-07,8,0
+8683,Business Administration,Accounting,1,14,2023-03-09,11,0
+8683,Business Administration,International Business,4,29,2023-04-28,0,9
+8683,Business Administration,Supply Chain Management,4,2,2023-07-22,6,0
+8683,Business Administration,Human Resource Management,3,14,2023-11-15,18,0
+8683,Business Administration,Math,1,13,2023-01-11,9,0
+8683,Business Administration,Marketing,3,18,2023-12-08,20,6
+8546,Data Science,Time Series Analysis,3,17,2024-01-08,15,0
+8546,Data Science,Statistical Methods,1,17,2023-12-04,8,0
+8546,Data Science,Deep Learning,4,25,2023-05-11,12,12
+8546,Data Science,Introduction to machine learning,3,9,2023-12-07,8,0
+8546,Data Science,Data Visualization,2,15,2024-03-17,3,0
+8546,Data Science,Quantitative methods,2,18,2024-01-01,8,6
+8546,Data Science,Algorithms,1,12,2024-02-04,1,0
+5616,Mechanical Engineering,Mechanics of Materials,2,19,2022-12-25,18,6
+2999,Business Administration,Marketing,1,15,2023-07-03,3,0
+2999,Business Administration,Business Law,4,17,2023-07-19,15,0
+2999,Business Administration,Organizational Behavior,2,22,2023-02-04,20,9
+2999,Business Administration,Accounting,1,30,2024-06-15,1,12
+2999,Business Administration,Human Resource Management,1,28,2023-03-31,18,9
+2999,Business Administration,Math,2,0,2024-06-22,5,0
+2999,Business Administration,Microeconomics,1,24,2023-05-08,18,9
+2999,Business Administration,Supply Chain Management,2,1,2024-01-27,3,0
+2999,Business Administration,International Business,4,15,2023-02-14,13,0
+2999,Business Administration,Operations Management,4,5,2022-09-05,2,0
+2999,Business Administration,Finance,3,1,2023-02-13,8,0
+2999,Business Administration,Public Law,1,17,2022-11-16,17,0
+2999,Business Administration,Strategic Management,1,25,2022-12-17,3,12
+7746,Mathematics,Topology,2,2,2023-02-11,20,0
+5856,Mechanical Engineering,Math,4,1,2023-07-09,13,0
+5856,Mechanical Engineering,Vibration Analysis,4,7,2024-03-09,4,0
+5856,Mechanical Engineering,Material Science,2,13,2024-05-10,18,0
+5856,Mechanical Engineering,Thermodynamics,1,28,2023-11-07,1,12
+5856,Mechanical Engineering,Fluid Mechanics,2,9,2024-03-11,11,0
+5071,Physics,Statistical Mechanics,4,15,2024-02-09,0,0
+5071,Physics,Geophysics,4,23,2024-06-14,1,12
+5071,Physics,Nuclear Physics,3,11,2023-11-12,7,0
+5071,Physics,Thermodynamics,2,13,2024-05-18,7,0
+5071,Physics,Condensed Matter Physics,3,10,2023-12-06,6,0
+5071,Physics,Optics,1,2,2022-11-24,15,0
+5071,Physics,Solid State Physics,3,18,2024-06-17,14,9
+2566,Business Administration,Accounting,4,7,2023-06-18,17,0
+2566,Business Administration,Organizational Behavior,4,1,2023-12-21,7,0
+2566,Business Administration,Marketing,2,4,2023-07-12,0,0
+2566,Business Administration,Supply Chain Management,1,3,2022-11-01,6,0
+2566,Business Administration,Management,1,20,2023-01-10,6,12
+2566,Business Administration,Math,1,9,2023-12-30,12,0
+2566,Business Administration,Operations Management,4,15,2024-05-20,12,0
+2566,Business Administration,Public Law,1,15,2023-05-22,17,0
+9996,Physics,Thermodynamics,4,24,2024-02-04,17,6
+9996,Physics,Classical Mechanics,1,13,2022-09-02,4,0
+6610,Business Administration,Business Ethics,1,30,2023-06-24,15,6
+6610,Business Administration,Management,4,23,2023-06-20,18,6
+6610,Business Administration,Finance,4,19,2023-02-19,16,9
+6610,Business Administration,Microeconomics,1,10,2023-06-22,5,0
+6610,Business Administration,International Business,2,12,2023-09-28,19,0
+6610,Business Administration,Marketing,1,22,2024-04-24,1,9
+6610,Business Administration,Supply Chain Management,3,14,2024-02-29,14,0
+6610,Business Administration,Business Law,4,31,2022-12-03,6,12
+1635,Data Science,Quantitative methods,1,11,2022-11-21,16,0
+1635,Data Science,Natural Language Processing,1,17,2023-01-25,0,0
+1635,Data Science,Data Engineering,3,26,2023-10-07,8,6
+1635,Data Science,Data Visualization,1,20,2024-06-23,18,6
+1635,Data Science,Introduction to machine learning,3,16,2024-03-31,3,0
+3785,Physics,Plasma Physics,4,4,2022-11-25,19,0
+3785,Physics,Computational Physics,2,6,2024-05-08,14,0
+3785,Physics,Thermodynamics,1,0,2023-06-23,9,0
+3785,Physics,Classical Mechanics,3,0,2024-05-25,0,0
+3785,Physics,Electromagnetism,1,13,2023-07-18,12,0
+3785,Physics,Particle Physics,4,16,2024-06-03,5,0
+3785,Physics,Solid State Physics,4,21,2023-07-30,17,9
+3785,Physics,Statistical Mechanics,4,24,2023-03-30,12,9
+3785,Physics,Optics,2,9,2024-02-02,19,0
+3785,Physics,Astrophysics,1,30,2024-01-13,10,6
+3785,Physics,Mathematical Physics,2,0,2023-05-03,19,0
+3785,Physics,Quantum Mechanics,4,23,2022-12-26,3,12
+3785,Physics,Geophysics,3,8,2023-07-23,17,0
+3785,Physics,Nuclear Physics,4,26,2023-05-15,10,12
+3785,Physics,Biophysics,3,2,2023-06-16,20,0
+7969,Physics,Plasma Physics,4,23,2024-03-04,4,9
+7969,Physics,Mathematical Physics,4,2,2023-07-04,14,0
+7969,Physics,Computational Physics,3,24,2023-05-15,8,12
+7969,Physics,Particle Physics,2,21,2023-09-10,13,9
+7969,Physics,Thermodynamics,1,20,2022-12-01,2,9
+7969,Physics,Solid State Physics,4,21,2024-03-08,17,9
+7210,Mechanical Engineering,Fluid Mechanics,3,19,2023-09-03,9,6
+7210,Mechanical Engineering,Mechanics of Materials,2,31,2024-02-09,14,12
+7210,Mechanical Engineering,Manufacturing Processes,1,23,2023-02-21,11,6
+7210,Mechanical Engineering,Thermodynamics,4,4,2023-01-24,2,0
+7210,Mechanical Engineering,Heat Transfer,2,11,2023-02-15,9,0
+7210,Mechanical Engineering,Control Systems,4,31,2022-12-01,16,9
+7210,Mechanical Engineering,Energy Systems,2,23,2024-05-30,14,6
+7210,Mechanical Engineering,Physics,4,0,2023-06-19,8,0
+7210,Mechanical Engineering,Robotics,3,11,2024-05-02,1,0
+7210,Mechanical Engineering,Solid Mechanics,2,5,2023-03-18,12,0
+7210,Mechanical Engineering,Mechanical Design,3,21,2023-08-31,3,12
+7210,Mechanical Engineering,Math,4,24,2024-04-30,12,6
+9035,Computer Science,Data Structures,3,13,2024-04-06,16,0
+9035,Computer Science,Software Engineering,3,28,2023-05-14,2,6
+9035,Computer Science,Computer Graphics,1,30,2023-03-20,13,12
+9035,Computer Science,Algorithms,4,31,2022-11-16,2,6
+9035,Computer Science,Artificial Intelligence,3,12,2024-05-30,8,0
+9035,Computer Science,Data Mining,2,21,2024-06-19,0,12
+9035,Computer Science,Cyber Security,3,30,2024-02-10,3,12
+9035,Computer Science,Operating Systems,2,16,2024-03-18,14,0
+9035,Computer Science,Math,3,10,2024-06-21,17,0
+9035,Computer Science,Databases,3,20,2024-01-27,0,6
+9035,Computer Science,Mobile Computing,1,8,2023-01-19,13,0
+9035,Computer Science,Web Development,1,9,2023-07-23,9,0
+9035,Computer Science,Programming,3,1,2024-01-13,16,0
+3421,Mathematics,Topology,1,29,2023-07-12,16,9
+3421,Mathematics,Mathematical Modeling,3,13,2024-04-13,20,0
+3421,Mathematics,Discrete Mathematics,4,1,2022-09-16,19,0
+3421,Mathematics,Complex Analysis,4,4,2023-10-21,6,0
+3421,Mathematics,Number Theory,1,12,2024-01-07,4,0
+3421,Mathematics,Differential Equations,2,3,2023-06-30,6,0
+3106,Data Science,Algorithms,4,17,2022-11-21,16,0
+3106,Data Science,Introduction to machine learning,3,29,2023-08-04,18,9
+3106,Data Science,Machine Learning,3,22,2023-10-24,19,6
+3106,Data Science,Statistical Models,2,28,2024-03-20,7,12
+3106,Data Science,Programming,3,3,2024-02-25,18,0
+3106,Data Science,Data Engineering,1,4,2023-03-08,5,0
+3106,Data Science,Natural Language Processing,3,26,2023-11-19,8,6
+3106,Data Science,Cloud Computing,1,11,2024-05-31,7,0
+3106,Data Science,Deep Learning,4,10,2024-03-14,12,0
+3106,Data Science,Data Visualization,3,4,2023-03-24,9,0
+3106,Data Science,Quantitative methods,2,16,2022-10-04,17,0
+3106,Data Science,Time Series Analysis,3,12,2024-04-26,5,0
+3106,Data Science,Statistical Methods,1,16,2024-05-19,17,0
+3106,Data Science,Data Mining,2,26,2023-06-07,11,9
+3106,Data Science,Big Data Technologies,2,7,2023-01-21,12,0
+9096,Physics,Quantum Mechanics,2,2,2023-12-06,7,0
+2959,Computer Science,Cyber Security,4,20,2023-12-05,16,9
+2959,Computer Science,Mobile Computing,3,27,2023-11-26,14,12
+2959,Computer Science,Artificial Intelligence,3,11,2023-02-21,4,0
+2959,Computer Science,Data Mining,2,10,2023-01-23,20,0
+2959,Computer Science,Computer Networks,3,15,2023-04-11,16,0
+2959,Computer Science,Operating Systems,4,13,2023-02-12,0,0
+2959,Computer Science,Human-Computer Interaction,2,22,2024-05-27,12,12
+2959,Computer Science,Software Engineering,2,15,2023-02-26,19,0
+2959,Computer Science,Computer Graphics,1,17,2023-11-12,7,0
+2959,Computer Science,Algorithms,2,24,2022-09-15,14,12
+2959,Computer Science,Databases,3,21,2023-09-15,8,12
+2959,Computer Science,Web Development,1,15,2023-08-10,3,0
+6520,Mechanical Engineering,Math,2,29,2024-01-14,5,12
+6520,Mechanical Engineering,Dynamics,4,23,2023-01-06,16,12
+6520,Mechanical Engineering,Mechanical Design,2,26,2023-11-07,0,9
+6520,Mechanical Engineering,Vibration Analysis,4,6,2023-01-09,2,0
+6520,Mechanical Engineering,Robotics,3,25,2023-08-09,19,12
+6520,Mechanical Engineering,Mechanics of Materials,3,14,2023-05-07,12,0
+6520,Mechanical Engineering,Solid Mechanics,3,0,2023-05-15,12,0
+6520,Mechanical Engineering,Physics,1,24,2023-01-11,5,12
+6520,Mechanical Engineering,Thermodynamics,4,24,2024-05-02,20,6
+6520,Mechanical Engineering,Manufacturing Processes,1,28,2023-11-07,16,12
+6520,Mechanical Engineering,Material Science,1,6,2023-08-20,12,0
+6520,Mechanical Engineering,Fluid Mechanics,1,19,2023-10-21,12,9
+6520,Mechanical Engineering,CAD/CAM,2,21,2024-04-16,5,12
+4341,Mathematics,Real Analysis,4,7,2023-09-20,9,0
+4341,Mathematics,Mathematical Logic,4,19,2022-09-11,20,9
+4341,Mathematics,Differential Equations,3,20,2024-02-17,7,9
+4341,Mathematics,Analysis,4,31,2024-02-18,1,9
+4341,Mathematics,Calculus,1,20,2023-03-07,0,6
+4341,Mathematics,Linear Algebra,2,6,2023-10-08,19,0
+4341,Mathematics,Abstract Algebra,4,26,2022-11-06,8,9
+4341,Mathematics,Geometry,3,13,2023-04-04,3,0
+4341,Mathematics,Discrete Mathematics,2,15,2023-03-29,2,0
+4341,Mathematics,Mathematical Modeling,1,26,2022-10-22,16,6
+3859,Computer Science,Databases,1,22,2023-12-17,18,9
+3859,Computer Science,Cloud Computing,2,10,2023-05-14,1,0
+3859,Computer Science,Software Engineering,1,22,2022-09-13,10,6
+5304,Business Administration,Strategic Management,1,20,2022-11-02,15,9
+5304,Business Administration,Supply Chain Management,1,15,2023-08-01,9,0
+5304,Business Administration,Business Law,1,3,2023-12-11,0,0
+5304,Business Administration,Operations Management,4,17,2024-03-15,16,0
+5304,Business Administration,Accounting,1,24,2024-06-05,17,12
+5304,Business Administration,Marketing,1,25,2023-09-19,20,6
+5304,Business Administration,Math,4,28,2022-11-18,5,6
+5304,Business Administration,Human Resource Management,1,22,2022-09-20,1,9
+5304,Business Administration,Microeconomics,3,8,2022-09-06,2,0
+5304,Business Administration,Management,4,7,2024-05-25,18,0
+5304,Business Administration,International Business,2,7,2023-07-06,6,0
+5304,Business Administration,Macroeconomics,2,29,2024-04-02,16,12
+5304,Business Administration,Finance,1,30,2023-04-10,4,12
+5304,Business Administration,Organizational Behavior,3,11,2024-02-29,0,0
+9771,Computer Science,Databases,1,26,2023-12-21,2,12
+9771,Computer Science,Artificial Intelligence,1,10,2024-05-12,10,0
+9771,Computer Science,Mobile Computing,3,2,2023-01-03,1,0
+9771,Computer Science,Cloud Computing,1,24,2024-05-18,4,6
+9771,Computer Science,Math,1,17,2023-10-27,14,0
+9771,Computer Science,Web Development,1,27,2024-03-04,12,9
+9771,Computer Science,Cyber Security,1,2,2023-12-02,18,0
+9771,Computer Science,Data Structures,4,22,2023-07-26,1,6
+9771,Computer Science,Human-Computer Interaction,1,18,2022-11-03,5,6
+9771,Computer Science,Software Engineering,4,28,2023-10-21,12,9
+9771,Computer Science,Algorithms,2,7,2023-11-25,2,0
+9771,Computer Science,Data Mining,3,3,2023-02-07,20,0
+9771,Computer Science,Programming,1,13,2024-05-24,20,0
+2170,Data Science,Programming,3,22,2023-09-08,9,12
+2170,Data Science,Machine Learning,3,20,2023-01-13,9,12
+2170,Data Science,Statistical Models,2,18,2024-04-21,8,12
+2170,Data Science,Natural Language Processing,4,16,2023-11-24,18,0
+2170,Data Science,Data Mining,3,31,2022-12-11,6,9
+2170,Data Science,Law and data,4,30,2023-12-24,8,12
+2170,Data Science,Data Engineering,1,11,2022-11-24,6,0
+2170,Data Science,Quantitative methods,4,21,2023-02-15,16,9
+2170,Data Science,Deep Learning,1,14,2022-10-13,8,0
+2170,Data Science,Algorithms,2,20,2023-11-15,16,12
+2170,Data Science,Statistical Methods,4,18,2023-02-02,20,9
+4738,Business Administration,Management,2,0,2023-08-18,14,0
+4738,Business Administration,Strategic Management,2,25,2023-01-06,19,6
+4738,Business Administration,Organizational Behavior,3,4,2024-02-09,7,0
+4738,Business Administration,Math,1,22,2023-08-30,2,12
+4738,Business Administration,Business Ethics,1,15,2023-07-25,2,0
+4738,Business Administration,Business Law,2,27,2024-02-04,7,6
+4738,Business Administration,Macroeconomics,3,26,2023-12-23,3,9
+4738,Business Administration,Accounting,4,6,2022-10-17,9,0
+4738,Business Administration,International Business,3,19,2022-12-08,19,6
+4738,Business Administration,Supply Chain Management,1,20,2024-01-16,18,12
+4738,Business Administration,Finance,4,18,2023-08-11,11,6
+4738,Business Administration,Public Law,2,5,2023-05-05,18,0
+3951,Physics,Particle Physics,2,7,2023-10-22,3,0
+8086,Physics,Quantum Mechanics,4,5,2023-10-08,9,0
+8086,Physics,Classical Mechanics,4,22,2022-11-30,20,6
+8086,Physics,Geophysics,1,25,2022-12-20,19,9
+8086,Physics,Astrophysics,3,7,2023-12-10,11,0
+8086,Physics,Condensed Matter Physics,2,23,2024-05-01,3,12
+8086,Physics,Statistical Mechanics,4,24,2022-12-24,13,12
+8086,Physics,Particle Physics,3,21,2023-07-01,20,6
+8086,Physics,Mathematical Physics,1,10,2022-09-03,16,0
+8086,Physics,Thermodynamics,3,31,2022-09-12,6,12
+8086,Physics,Biophysics,1,11,2023-05-16,5,0
+8086,Physics,Plasma Physics,1,21,2023-09-28,8,6
+8086,Physics,Solid State Physics,2,4,2023-09-11,14,0
+8086,Physics,Optics,4,24,2023-02-09,20,12
+8736,Data Science,Machine Learning,3,30,2024-03-25,5,6
+8736,Data Science,Algorithms,3,29,2023-08-24,20,9
+8736,Data Science,Statistical Models,1,0,2024-03-17,11,0
+8736,Data Science,Natural Language Processing,3,20,2022-11-02,6,12
+8736,Data Science,Data Mining,2,5,2024-02-07,14,0
+8736,Data Science,Law and data,1,1,2023-10-22,1,0
+8736,Data Science,Big Data Technologies,4,14,2023-04-18,6,0
+8736,Data Science,Programming,3,11,2023-01-16,1,0
+8736,Data Science,Introduction to machine learning,2,21,2022-11-10,0,12
+8736,Data Science,Deep Learning,1,18,2023-03-26,16,9
+8736,Data Science,Time Series Analysis,2,13,2023-12-08,20,0
+8736,Data Science,Statistical Methods,4,19,2023-08-16,19,9
+8736,Data Science,Data Visualization,4,9,2023-04-28,0,0
+8736,Data Science,Cloud Computing,4,10,2022-09-12,15,0
+7071,Computer Science,Artificial Intelligence,2,13,2022-11-13,5,0
+7071,Computer Science,Math,4,22,2023-06-29,19,12
+7071,Computer Science,Cloud Computing,4,10,2023-08-29,4,0
+7071,Computer Science,Human-Computer Interaction,2,20,2023-02-22,17,9
+7071,Computer Science,Computer Networks,1,3,2023-11-29,5,0
+7071,Computer Science,Databases,4,15,2022-11-11,5,0
+7071,Computer Science,Programming,3,8,2022-11-13,6,0
+7071,Computer Science,Cyber Security,3,25,2022-10-25,2,9
+7071,Computer Science,Data Mining,1,0,2024-06-16,6,0
+5308,Mathematics,Topology,1,18,2023-02-08,9,9
+5308,Mathematics,Analysis,3,19,2023-07-06,3,9
+5308,Mathematics,Abstract Algebra,4,10,2024-02-08,13,0
+5308,Mathematics,Geometry,2,24,2022-12-21,16,12
+5308,Mathematics,Linear Algebra,2,31,2022-12-01,2,9
+5308,Mathematics,Real Analysis,3,17,2023-04-15,13,0
+5308,Mathematics,Calculus,3,0,2023-05-21,12,0
+5308,Mathematics,Combinatorics,3,2,2023-12-28,14,0
+5308,Mathematics,Mathematical Logic,1,29,2023-11-08,17,6
+5308,Mathematics,Statistics,4,22,2024-04-04,13,9
+5308,Mathematics,Discrete Mathematics,1,10,2023-12-01,19,0
+5308,Mathematics,Number Theory,2,6,2024-02-17,9,0
+7036,Mathematics,Combinatorics,2,25,2023-08-31,14,9
+7036,Mathematics,Mathematical Modeling,4,10,2023-02-12,16,0
+7036,Mathematics,Probability,1,29,2023-03-29,16,12
+7036,Mathematics,Analysis,2,0,2023-03-20,10,0
+7036,Mathematics,Calculus,2,11,2023-05-11,12,0
+7036,Mathematics,Mathematical Logic,3,12,2022-09-13,5,0
+7036,Mathematics,Complex Analysis,4,8,2023-01-26,0,0
+7036,Mathematics,Real Analysis,1,3,2024-03-12,18,0
+7036,Mathematics,Number Theory,4,27,2023-09-30,2,6
+7036,Mathematics,Discrete Mathematics,4,17,2023-12-14,10,0
+7036,Mathematics,Abstract Algebra,1,21,2023-06-25,14,9
+7036,Mathematics,Statistics,4,12,2024-06-12,0,0
+7036,Mathematics,Topology,4,14,2023-04-26,6,0
+7036,Mathematics,Linear Algebra,3,4,2023-12-03,14,0
+7036,Mathematics,Geometry,3,26,2024-05-05,17,6
+7317,Computer Science,Databases,4,29,2024-04-01,12,6
+7317,Computer Science,Operating Systems,2,17,2023-01-30,10,0
+7317,Computer Science,Artificial Intelligence,4,5,2022-12-03,0,0
+7317,Computer Science,Mobile Computing,4,15,2023-02-05,18,0
+7317,Computer Science,Human-Computer Interaction,1,23,2023-02-08,14,9
+7317,Computer Science,Cloud Computing,2,25,2023-06-14,1,6
+7317,Computer Science,Cyber Security,2,2,2023-02-21,18,0
+7317,Computer Science,Computer Graphics,4,24,2024-05-05,10,6
+7317,Computer Science,Web Development,2,24,2024-01-25,16,6
+7317,Computer Science,Computer Networks,4,9,2023-03-14,3,0
+7317,Computer Science,Data Structures,1,22,2024-01-05,3,9
+8066,Mathematics,Combinatorics,4,1,2023-09-02,6,0
+8066,Mathematics,Linear Algebra,4,26,2023-05-09,0,6
+8066,Mathematics,Calculus,1,0,2022-09-15,4,0
+8066,Mathematics,Analysis,2,13,2023-02-25,13,0
+8066,Mathematics,Differential Equations,4,5,2023-04-10,19,0
+8066,Mathematics,Probability,2,15,2023-02-15,15,0
+8066,Mathematics,Statistics,2,22,2024-05-14,19,12
+8066,Mathematics,Abstract Algebra,3,25,2023-12-21,11,6
+6803,Business Administration,Human Resource Management,4,29,2022-12-25,13,6
+6803,Business Administration,International Business,1,26,2022-10-18,17,6
+6803,Business Administration,Organizational Behavior,1,19,2023-10-17,10,9
+6803,Business Administration,Business Ethics,4,27,2023-01-09,8,12
+6803,Business Administration,Business Law,1,10,2023-04-08,5,0
+6803,Business Administration,Microeconomics,2,7,2024-04-29,3,0
+6803,Business Administration,Finance,3,0,2023-11-14,0,0
+6840,Physics,Condensed Matter Physics,4,16,2023-08-25,11,0
+6840,Physics,Electromagnetism,1,24,2023-02-10,15,6
+6840,Physics,Astrophysics,2,25,2023-06-19,12,12
+6840,Physics,Mathematical Physics,4,9,2023-04-03,1,0
+6840,Physics,Solid State Physics,3,9,2024-06-21,2,0
+6840,Physics,Thermodynamics,3,20,2023-10-02,7,6
+6840,Physics,Classical Mechanics,3,9,2023-12-23,12,0
+6840,Physics,Nuclear Physics,1,11,2024-05-16,9,0
+6840,Physics,Quantum Mechanics,1,1,2022-12-02,10,0
+6840,Physics,Geophysics,3,1,2023-05-29,2,0
+6840,Physics,Plasma Physics,4,16,2023-12-27,4,0
+6840,Physics,Optics,2,12,2023-11-01,13,0
+8354,Computer Science,Data Mining,4,26,2022-10-02,18,12
+8354,Computer Science,Mobile Computing,2,0,2023-07-08,0,0
+8354,Computer Science,Human-Computer Interaction,4,11,2022-11-26,6,0
+8354,Computer Science,Algorithms,1,4,2023-07-28,15,0
+8354,Computer Science,Cyber Security,3,16,2023-10-17,10,0
+8354,Computer Science,Math,3,13,2023-11-08,9,0
+8354,Computer Science,Operating Systems,2,30,2022-12-10,1,6
+8354,Computer Science,Cloud Computing,4,5,2023-12-30,3,0
+2938,Physics,Plasma Physics,3,20,2023-02-09,17,9
+2938,Physics,Classical Mechanics,1,21,2022-11-18,12,9
+2938,Physics,Geophysics,2,5,2023-03-21,13,0
+2938,Physics,Statistical Mechanics,2,22,2023-11-06,11,12
+2938,Physics,Biophysics,4,5,2023-02-03,20,0
+2938,Physics,Mathematical Physics,4,23,2024-03-22,9,6
+2938,Physics,Thermodynamics,4,1,2022-09-02,4,0
+7736,Data Science,Big Data Technologies,1,2,2022-11-01,8,0
+7736,Data Science,Statistical Models,3,7,2023-09-24,13,0
+7736,Data Science,Statistical Methods,2,2,2023-12-07,13,0
+7736,Data Science,Data Visualization,3,4,2024-05-08,5,0
+7736,Data Science,Algorithms,1,19,2024-02-01,6,6
+7736,Data Science,Machine Learning,4,24,2022-10-31,12,6
+7736,Data Science,Natural Language Processing,1,4,2023-04-10,19,0
+7736,Data Science,Data Mining,4,29,2024-03-21,2,6
+7736,Data Science,Law and data,3,4,2023-04-27,6,0
+7736,Data Science,Cloud Computing,3,27,2022-09-03,10,9
+7736,Data Science,Introduction to machine learning,4,30,2023-10-19,8,9
+7736,Data Science,Deep Learning,2,17,2024-05-06,0,0
+9122,Physics,Astrophysics,2,18,2024-06-23,17,6
+9122,Physics,Electromagnetism,1,14,2023-06-17,5,0
+9122,Physics,Optics,2,2,2023-10-26,4,0
+9122,Physics,Thermodynamics,3,12,2024-02-10,15,0
+6607,Physics,Biophysics,3,17,2023-08-20,4,0
+6607,Physics,Statistical Mechanics,2,26,2024-05-20,15,12
+6085,Computer Science,Cyber Security,4,28,2023-08-31,13,12
+6085,Computer Science,Human-Computer Interaction,2,18,2023-12-11,7,9
+6085,Computer Science,Operating Systems,2,10,2023-04-12,18,0
+6085,Computer Science,Databases,4,17,2024-01-05,10,0
+6085,Computer Science,Software Engineering,4,24,2023-07-18,4,6
+6085,Computer Science,Mobile Computing,4,17,2023-01-14,12,0
+6085,Computer Science,Data Mining,1,30,2022-10-05,2,12
+9328,Mathematics,Discrete Mathematics,3,21,2023-05-12,3,9
+9328,Mathematics,Linear Algebra,3,19,2022-11-02,13,9
+9328,Mathematics,Topology,1,27,2022-12-21,8,9
+1111,Data Science,Cloud Computing,3,18,2023-10-25,2,6
+1111,Data Science,Programming,1,10,2023-06-20,19,0
+1111,Data Science,Statistical Models,1,1,2023-10-29,1,0
+1111,Data Science,Machine Learning,4,6,2022-12-14,14,0
+1111,Data Science,Algorithms,1,25,2024-03-23,15,6
+1111,Data Science,Law and data,1,10,2023-09-15,14,0
+1111,Data Science,Data Mining,3,27,2022-11-26,11,6
+2603,Computer Science,Math,2,8,2023-12-26,20,0
+4122,Mathematics,Number Theory,1,27,2022-11-03,12,6
+4122,Mathematics,Calculus,3,12,2023-01-04,4,0
+4122,Mathematics,Discrete Mathematics,4,31,2023-07-26,4,6
+4122,Mathematics,Analysis,3,12,2023-11-12,16,0
+4122,Mathematics,Mathematical Modeling,4,7,2024-03-10,19,0
+4122,Mathematics,Topology,3,0,2023-03-07,8,0
+4122,Mathematics,Probability,2,21,2023-02-09,3,9
+4122,Mathematics,Combinatorics,2,3,2023-03-26,7,0
+4122,Mathematics,Statistics,1,30,2023-04-19,14,9
+4122,Mathematics,Differential Equations,1,4,2022-10-01,2,0
+4122,Mathematics,Geometry,2,14,2022-10-23,3,0
+4122,Mathematics,Linear Algebra,4,27,2022-09-20,15,6
+4122,Mathematics,Mathematical Logic,4,2,2023-02-06,18,0
+4122,Mathematics,Real Analysis,4,19,2023-07-28,9,6
+4122,Mathematics,Complex Analysis,2,1,2023-12-23,18,0
+2681,Computer Science,Computer Networks,4,31,2023-04-12,7,9
+2681,Computer Science,Cyber Security,4,0,2022-09-12,2,0
+2681,Computer Science,Data Structures,3,23,2023-10-14,5,12
+2681,Computer Science,Programming,1,16,2024-01-11,11,0
+2681,Computer Science,Data Mining,3,2,2024-01-14,5,0
+2681,Computer Science,Operating Systems,1,28,2023-04-13,17,9
+2681,Computer Science,Human-Computer Interaction,2,8,2024-06-07,13,0
+2681,Computer Science,Algorithms,2,6,2023-09-01,2,0
+2681,Computer Science,Databases,2,17,2023-09-12,5,0
+4672,Data Science,Algorithms,1,0,2024-02-04,13,0
+4672,Data Science,Introduction to machine learning,1,7,2023-09-18,13,0
+4672,Data Science,Time Series Analysis,1,10,2023-07-11,15,0
+4672,Data Science,Programming,3,25,2023-03-30,3,9
+4672,Data Science,Quantitative methods,2,28,2022-11-05,14,12
+4672,Data Science,Law and data,2,7,2023-09-24,15,0
+4672,Data Science,Data Engineering,2,7,2022-12-03,8,0
+4672,Data Science,Statistical Methods,3,0,2023-04-10,16,0
+4672,Data Science,Statistical Models,2,16,2023-12-23,5,0
+4672,Data Science,Data Mining,3,13,2023-01-29,2,0
+4672,Data Science,Deep Learning,1,0,2024-02-14,7,0
+4672,Data Science,Machine Learning,4,10,2023-10-27,2,0
