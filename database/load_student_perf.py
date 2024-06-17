@@ -1,11 +1,15 @@
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))) # setting the path of this project one level up (otherwise it can't find other files)
 
 import duckdb
 import pandas as pd
 import dask.dataframe as ddf
-from transformation.utility import extract_variables_from_notebook
+from transformation.student_perf import StudentPerformance
+
+pd.set_option('future.no_silent_downcasting', True)
+pd.options.display.max_columns = None
+pd.set_option('display.precision', 2)
 
 
 ### creating duckdb database
@@ -13,12 +17,19 @@ from transformation.utility import extract_variables_from_notebook
 conn = duckdb.connect(database = "database/bdt.duckdb" , read_only = False)
 
 
-### extract student_perf datafram from ipynb
+### Define how to transform the student performance csv's.
+student_perf_raw = ['student-mat.csv', 'student-por.csv']
+keep_columns = ['sex', 'address', 'famsize', 'Pstatus', 'Medu', 'Fedu',
+                'traveltime', 'studytime', 'failures', 'schoolsup', 'famsup', 
+                'activities', 'romantic', 'famrel', 'freetime', 'goout', 
+                'Dalc', 'Walc', 'health', 'absences', 'G1', 'G2', 'G3']
+conv_columns = ['sex', 'address', 'famsize', 'Pstatus', 'schoolsup', 'famsup', 'activities', 'romantic']
+replace_dict = {'F': 0, 'M': 1, 'U': 0, 'R': 1, 'LE3': 0, 'GT3': 1, 'T': 0, 'A': 1, 'yes': 1, 'no': 0}
+grades = ['G1', 'G2', 'G3']
 
-notebook_path = 'transformation/student_perf.ipynb'                     # Path to your Jupyter Notebook
-notebook_vars = extract_variables_from_notebook(notebook_path)          # Extract variables
-student_perf = notebook_vars['student_perf']                            # Access the specific variable (assuming 'student_perf' is the variable you need)
-# print(student_perf)                                                     # Now you can use the 'student_perf' variable in your script
+sp = StudentPerformance(student_perf_raw, keep_columns, conv_columns, replace_dict, grades)
+print(sp.get_student_performance().head())
+student_perf = sp.get_student_performance()
 
 
 ### Ingest data into duckdb database
@@ -32,10 +43,6 @@ dtype_mapping = {
     'string': 'VARCHAR'
 }
 
-# Define variables
-table_name = 'student_perf'
-ddf = student_perf
-
 # Generate the CREATE TABLE statement dynamically
 def generate_create_table_statement(table_name, df):
     columns = []
@@ -47,10 +54,11 @@ def generate_create_table_statement(table_name, df):
     return create_table_query
 
 # Generate the CREATE TABLE statement
+table_name = 'student_perf'
 create_table_query = generate_create_table_statement(table_name=table_name, df=student_perf)
 conn.execute(create_table_query)                                        # Execute the CREATE TABLE statement
 
-ddf = ddf.repartition(partition_size="100MB")                           # Should be changed for prod but for our purposes its enough
+student_perf = student_perf.repartition(partition_size="100MB")         # Should be changed for prod but for our purposes its enough
 
 # Function to ingest a partition into DuckDB
 def ingest_partition(conn, table_name, df):
@@ -59,12 +67,12 @@ def ingest_partition(conn, table_name, df):
     conn.unregister("temp_df")                                          # Delete temp. table to free up space
 
 # Iterate over partitions and ingest them
-for partition in ddf.to_delayed():
+for partition in student_perf.to_delayed():
     df_partition = partition.compute()                                  # Compute each partition into a Pandas DataFrame
     ingest_partition(conn, table_name=table_name, df=df_partition)
 
 # Verify the ingestion
-result = conn.execute("SELECT * FROM student_perf LIMIT 10").fetchdf()
+result = conn.execute("SELECT * FROM student_perf LIMIT 5").fetchdf()
 print(result)
 
 
