@@ -1,4 +1,8 @@
 {
     "python.analysis.typeCheckingMode": "basic",
-    "python.defaultInterpreterPath": "/bin/python3"
+    "python.defaultInterpreterPath": "/bin/python3",
+    "cSpell.words": [
+        "duckdb",
+        "streamlit"
+    ]
 }

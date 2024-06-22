@@ -51,7 +51,7 @@ def students_query(project_id, dataset_id, table_id, service_account_path):
 project_id = 'bdt-2024'
 dataset_id = 'Students_table_of_records'  
 table_id = 'students_data'
-service_account_path = 'bdt-2024-accesskey.json'  # Replace with the actual path
+service_account_path = 'cloud/bdt-2024-accesskey.json'  # Replace with the actual path
 
 df = students_query(project_id, dataset_id, table_id, service_account_path)
 print(df)

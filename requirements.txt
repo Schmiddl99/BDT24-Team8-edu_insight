@@ -12,3 +12,5 @@ matplotlib
 seaborn
 nbformat
 nbconvert
+faker
+google-cloud-storage

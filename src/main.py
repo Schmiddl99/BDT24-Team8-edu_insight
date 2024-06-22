@@ -1,8 +1,12 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))) # setting the path of this project one level up (otherwise it can't find other files)
+
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import requests
+from Machine_Learning.prediction import average_classification_result
 
 
     
@@ -10,51 +14,38 @@ def create_student_form():
     st.text("\t \t \t")
     with st.form("student_form"):
         st.subheader("Basic Information")
-        name=st.text_input("Name and Surname")
-        sex = st.radio("Sex", ["F - Female", "M - Male"])
-        age = st.slider("Age", 15, 22, value=18)
+        name = st.text_input("How should we call you?")
+        student_ID = st.number_input('Input Student ID', min_value=1000, max_value=9999, value="min", step=1)
+        sex = st.radio("Gender", ["Female", "Male"])
+        # age = st.slider("Age", 18, 30, value=18)
         
-        col1, col2  = st.columns(2)
- 
-        with col1:
-            address = st.radio("Address Type", ["U - Urban", "R - Rural"])
-            famsize = st.radio("Family Size", ["LE3 - ≤3", "GT3 - >3"])
-            pstatus = st.radio("Parents' Status", ["T - Living together", "A - Apart"])
-        with col2:
-            guardian = st.selectbox("Guardian", ["Mother", "Father", "Other"])
-            internet = st.checkbox("Internet access at home")
-            romantic = st.checkbox("In a romantic relationship")
+        address = st.radio("Address Type", ["Urban", "Rural"])
+        famsize = st.radio("Family Size", ["less or equal to 3", "greater then 3"])
+        romantic = st.checkbox("Are you currently in a romantic relationship?")
+
 
         # Parents' Information
         st.subheader("Parents' Information")
         st.markdown("Provide your parents' education status")
-        col1, col2 = st.columns(2)
-        with col1:
-            medu = st.selectbox("Mother's Education", ["None", "Primary education (4th grade)", "5th to 9th grade", "Secondary education", "Higher education"])
-            
-        with col2:
-           fedu = st.selectbox("Father's Education", ["None", "Primary education (4th grade)", "5th to 9th grade)", "Secondary education", "Higher education"])
-        
+        medu = st.selectbox("Mother's Education", ["None", "Primary education (4th grade)", "5th to 9th grade", "Secondary education", "Higher education"])   
+        fedu = st.selectbox("Father's Education", ["None", "Primary education (4th grade)", "5th to 9th grade", "Secondary education", "Higher education"])
+        pstatus = st.radio("Parents' Status", ["Living together", "Living apart"])
 
         # Education
         st.subheader("Education")
         
-        reason = st.selectbox("Reason for choosing this school", ["Close to home", "School reputation", "Course preference", "Other"])
-        st.markdown("From 1 to 4 indicate:")
-
-        
+        st.markdown("From 1 to 4 indicate: (look for the '?' to get help)")        
         traveltime = st.slider("Average travel time to school", 1, 4, value=2, format="%d", help="1 - <15 min., 2 - 15 to 30 min., 3 - 30 min. to 1 hour, or 4 - >1 hour")
         studytime = st.slider("Weekly study time", 1, 4, value=2, format="%d", help="1 - <2 hours, 2 - 2 to 5 hours, 3 - 5 to 10 hours, or 4 - >10 hours")
         failures = st.number_input("Number of past class failures", 0, 3, value=0)
         schoolsup = st.checkbox("Extra educational support")
         famsup = st.checkbox("Family educational support")
-        paid = st.checkbox("Extra paid classes within the course subject")
         activities = st.checkbox("Extra-curricular activities")
-        
 
         # Lifestyle
         st.subheader("Lifestyle")
         st.markdown("From 1 to 5 indicate how much you consider the following activities")
+
         famrel = st.slider("Spending quality time with your family", 1, 5, value=3, help="From 1 - very bad to 5 - excellent")
         freetime = st.slider("Free time after school", 1, 5, value=3, help="From 1 - very low to 5 - very high")
         goout = st.slider("Going out with friends", 1, 5, value=3, help="From 1 - very low to 5 - very high")
@@ -65,41 +56,54 @@ def create_student_form():
 
         submitted = st.form_submit_button("Submit")
         if submitted:
-             
+            data = {
+                'Student_P_ID': [student_ID],  
+                'DisplayName': [name],  
+                'sex': [sex],
+                'address': [address],
+                'famsize': [famsize],
+                'Pstatus': [pstatus],
+                'Medu': [medu],
+                'Fedu': [fedu],
+                'traveltime': [traveltime],
+                'studytime': [studytime],
+                'failures': [failures],
+                'schoolsup': [schoolsup],
+                'famsup': [famsup],
+                'activities': [activities],
+                'romantic': [romantic],
+                'famrel': [famrel],
+                'freetime': [freetime],
+                'goout': [goout],
+                'Dalc': [dalc],
+                'Walc': [walc],
+                'health': [health]
             
-            form_data = {
-                "Student_P_ID": 0,  
-                "DisplayName": name,  
-                "sex": sex,
-                "address": address,
-                "famsize": famsize,
-                "Pstatus": pstatus,
-                "Medu": medu,
-                "Fedu": fedu,
-                "reasonsc":reason,
-                "traveltime": traveltime,
-                "studytime": studytime,
-                "failures": failures,
-                "schoolsup": schoolsup,
-                "famsup": famsup,
-                "activities": activities,
-                "romantic": romantic,
-                "famrel": famrel,
-                "freetime": freetime,
-                "goout": goout,
-                "Dalc": dalc,
-                "Walc": walc,
-                "health": health
+                # [student_ID, name, sex, address, famsize, pstatus, medu, fedu, traveltime, studytime, failures, schoolsup, famsup, activities, romantic, famrel, freetime, goout, dalc, walc, health]
             }
+            replace_dict = {'Female': 0, 'Male': 1, 'Urban': 0, 'Rural': 1, 'less or equal to 3': 0, 'greater then 3': 1, 
+                            'Living together': 0, 'Living apart': 1, 'true': 1, 'false': 0,
+                            'None': 0, 'Primary education (4th grade)': 1, '5th to 9th grade': 2, 'Secondary education': 3, 'Higher education': 4}
+            df_submit = pd.DataFrame(data)
+            df_submit.replace(replace_dict, inplace=True)
 
-            st.write(form_data)
+            # for prediction testing
+            Grade = 17 / 30     # needs to be normalized
+            df_pred = df_submit
+            df_pred['absences'] = 5
+            df_pred['AVG_G'] = Grade
+            df_pred = df_pred.drop(['Student_P_ID', 'DisplayName'], axis=1)
+            # st.write(df_submit)
+            # st.write(df_pred)
+
             st.success("Form submitted successfully!")
+
+            pred_result = average_classification_result(df_submit=df_pred)           
             
-def main():
-    st.title("Student Data Entry")
-    create_student_form()
-
-
+            st.markdown("Prediction result if you have good chances to succeed with your studies:")
+            pred_dict = {0: 'No', 1: 'Yes'}
+            pred_result.replace(pred_dict, inplace=True)
+            st.write(pred_result.loc[0])
 
 def display_performance_graphs(data):
     st.header("Student Performance Graphs")
@@ -136,14 +140,7 @@ def display_performance_graphs(data):
 def main():
     st.title("Welcome")
     st.subheader('Please provide your information below', divider='red')
-
     create_student_form()
-
-    # Load sample data (you can replace this with your actual data)
-    #data = pd.read_csv("/workspaces/BDT24-Team8/Data/Predict_student_performance/student.txt")
-
-    # Display performance graphs
-    #display_performance_graphs(data)
 
 if __name__ == "__main__":
     main()
