@@ -4,7 +4,7 @@ import pandas as pd
 from google.oauth2.service_account import Credentials
 from google.auth.transport.requests import AuthorizedSession
 
-def students_query(project_id, dataset_id, table_id, service_account_path):
+def students_query(project_id, dataset_id, table_id, service_account_path, student_id):
 
     with open(service_account_path, 'r') as f:
         service_account_info = json.load(f)
@@ -20,7 +20,21 @@ def students_query(project_id, dataset_id, table_id, service_account_path):
 
     # Define the API endpoint and parameters
     url = f'https://bigquery.googleapis.com/bigquery/v2/projects/{project_id}/queries'
-    query = f"SELECT * FROM `{project_id}.{dataset_id}.{table_id}`"
+    query = f"""
+                SELECT * 
+                FROM `{project_id}.{dataset_id}.{table_id}`
+                WHERE studentID = {student_id}
+                OR course_name IN (
+                    SELECT course_name
+                    FROM `{project_id}.{dataset_id}.{table_id}` 
+                    WHERE studentID = {student_id}
+                )
+                OR subject IN (
+                    SELECT subject
+                    FROM `{project_id}.{dataset_id}.{table_id}` 
+                    WHERE studentID = {student_id}
+                );
+                """
     params = {
         'query': query,
         'useLegacySql': False
@@ -51,7 +65,8 @@ def students_query(project_id, dataset_id, table_id, service_account_path):
 project_id = 'bdt-2024'
 dataset_id = 'Students_table_of_records'  
 table_id = 'students_data'
+student_id = 7051
 service_account_path = 'cloud/bdt-2024-accesskey.json'  # Replace with the actual path
 
-df = students_query(project_id, dataset_id, table_id, service_account_path)
+df = students_query(project_id, dataset_id, table_id, service_account_path, student_id)
 print(df)
