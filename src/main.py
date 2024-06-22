@@ -10,11 +10,12 @@ def create_student_form():
     st.text("\t \t \t")
     with st.form("student_form"):
         st.subheader("Basic Information")
-        col1, col2  = st.columns(2)
         name=st.text_input("Name and Surname")
         sex = st.radio("Sex", ["F - Female", "M - Male"])
         age = st.slider("Age", 15, 22, value=18)
-            
+        
+        col1, col2  = st.columns(2)
+ 
         with col1:
             address = st.radio("Address Type", ["U - Urban", "R - Rural"])
             famsize = st.radio("Family Size", ["LE3 - ≤3", "GT3 - >3"])
@@ -37,9 +38,11 @@ def create_student_form():
 
         # Education
         st.subheader("Education")
-        st.markdown("From 1 to 4 indicate the")
-
+        
         reason = st.selectbox("Reason for choosing this school", ["Close to home", "School reputation", "Course preference", "Other"])
+        st.markdown("From 1 to 4 indicate:")
+
+        
         traveltime = st.slider("Average travel time to school", 1, 4, value=2, format="%d", help="1 - <15 min., 2 - 15 to 30 min., 3 - 30 min. to 1 hour, or 4 - >1 hour")
         studytime = st.slider("Weekly study time", 1, 4, value=2, format="%d", help="1 - <2 hours, 2 - 2 to 5 hours, 3 - 5 to 10 hours, or 4 - >10 hours")
         failures = st.number_input("Number of past class failures", 0, 3, value=0)
@@ -73,6 +76,7 @@ def create_student_form():
                 "Pstatus": pstatus,
                 "Medu": medu,
                 "Fedu": fedu,
+                "reasonsc":reason,
                 "traveltime": traveltime,
                 "studytime": studytime,
                 "failures": failures,
@@ -143,3 +147,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
