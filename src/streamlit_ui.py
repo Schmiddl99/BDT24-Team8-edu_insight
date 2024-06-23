@@ -34,7 +34,6 @@ def create_student_form():
         st.markdown("From 1 to 4 indicate: (look for the '?' to get help)")        
         traveltime = st.slider("Average travel time to school", 1, 4, value=2, format="%d", help="1 - <15 min., 2 - 15 to 30 min., 3 - 30 min. to 1 hour, or 4 - >1 hour")
         studytime = st.slider("Weekly study time", 1, 4, value=2, format="%d", help="1 - <2 hours, 2 - 2 to 5 hours, 3 - 5 to 10 hours, or 4 - >10 hours")
-        failures = st.number_input("Number of past class failures", 0, 3, value=0)
         schoolsup = st.checkbox("Extra educational support")
         famsup = st.checkbox("Family educational support")
         activities = st.checkbox("Extra-curricular activities")

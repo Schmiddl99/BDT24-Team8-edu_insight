@@ -20,7 +20,7 @@ def students_query(project_id, dataset_id, table_id, service_account_path, stude
     # Define the API endpoint and parameters
     url = f'https://bigquery.googleapis.com/bigquery/v2/projects/{project_id}/queries'
     query = f"""
-                SELECT * 
+                SELECT studenID, course_name, subject, grade, credits 
                 FROM `{project_id}.{dataset_id}.{table_id}`
                 WHERE studentID = {student_id}
                 OR course_name IN (
