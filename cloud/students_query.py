@@ -20,7 +20,7 @@ def students_query(project_id, dataset_id, table_id, service_account_path, stude
     # Define the API endpoint and parameters
     url = f'https://bigquery.googleapis.com/bigquery/v2/projects/{project_id}/queries'
     query = f"""
-                SELECT studenID, course_name, subject, grade, credits 
+                SELECT studentID, course_name, subject, grade, credits 
                 FROM `{project_id}.{dataset_id}.{table_id}`
                 WHERE studentID = {student_id}
                 OR course_name IN (
@@ -63,10 +63,10 @@ def students_query(project_id, dataset_id, table_id, service_account_path, stude
     df_tor['studentID'] = df_tor['studentID'].astype(int)
     df_tor['course_name'] = df_tor['course_name'].astype(str)
     df_tor['subject'] = df_tor['subject'].astype(str)
-    df_tor['semester'] = df_tor['semester'].astype(int)
+    # df_tor['semester'] = df_tor['semester'].astype(int)
     df_tor['grade'] = df_tor['grade'].astype(int)
-    df_tor['exam_date'] = pd.to_datetime(df_tor['exam_date'])
-    df_tor['absences_lectures'] = df_tor['absences_lectures'].astype(int)
+    # df_tor['exam_date'] = pd.to_datetime(df_tor['exam_date'])
+    # df_tor['absences_lectures'] = df_tor['absences_lectures'].astype(int)
     df_tor['credits'] = df_tor['credits'].astype(int)
 
     return df_tor

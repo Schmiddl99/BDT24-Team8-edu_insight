@@ -63,7 +63,7 @@ def create_student_form():
                 'Fedu': [fedu],
                 'traveltime': [traveltime],
                 'studytime': [studytime],
-                'failures': [failures],
+                'failures': [0],
                 'schoolsup': [schoolsup],
                 'famsup': [famsup],
                 'activities': [activities],
