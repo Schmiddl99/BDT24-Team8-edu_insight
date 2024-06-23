@@ -58,7 +58,7 @@ def average_classification_result(df_submit):
 
     # Convert list of arrays to a DataFrame for easier aggregation
     predictions_df = pd.DataFrame(predictions)
-    print(predictions_df)
+    # print(predictions_df)
 
     # Calculate the average prediction for each instance
     # Average will be between 0 and 1; round to get binary classification

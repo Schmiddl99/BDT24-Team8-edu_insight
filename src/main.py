@@ -7,140 +7,60 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from Machine_Learning.prediction import average_classification_result
+from streamlit_ui import create_student_form
+from cloud.students_query import students_query, grade_query, abseces_query, failure_query
+from transformation.student_comparison import calc_student_comparison
 
-
-    
-def create_student_form():
-    st.text("\t \t \t")
-    with st.form("student_form"):
-        st.subheader("Basic Information")
-        name = st.text_input("How should we call you?")
-        student_ID = st.number_input('Input Student ID', min_value=1000, max_value=9999, value="min", step=1)
-        sex = st.radio("Gender", ["Female", "Male"])
-        # age = st.slider("Age", 18, 30, value=18)
-        
-        address = st.radio("Address Type", ["Urban", "Rural"])
-        famsize = st.radio("Family Size", ["less or equal to 3", "greater then 3"])
-        romantic = st.checkbox("Are you currently in a romantic relationship?")
-
-
-        # Parents' Information
-        st.subheader("Parents' Information")
-        st.markdown("Provide your parents' education status")
-        medu = st.selectbox("Mother's Education", ["None", "Primary education (4th grade)", "5th to 9th grade", "Secondary education", "Higher education"])   
-        fedu = st.selectbox("Father's Education", ["None", "Primary education (4th grade)", "5th to 9th grade", "Secondary education", "Higher education"])
-        pstatus = st.radio("Parents' Status", ["Living together", "Living apart"])
-
-        # Education
-        st.subheader("Education")
-        
-        st.markdown("From 1 to 4 indicate: (look for the '?' to get help)")        
-        traveltime = st.slider("Average travel time to school", 1, 4, value=2, format="%d", help="1 - <15 min., 2 - 15 to 30 min., 3 - 30 min. to 1 hour, or 4 - >1 hour")
-        studytime = st.slider("Weekly study time", 1, 4, value=2, format="%d", help="1 - <2 hours, 2 - 2 to 5 hours, 3 - 5 to 10 hours, or 4 - >10 hours")
-        failures = st.number_input("Number of past class failures", 0, 3, value=0)
-        schoolsup = st.checkbox("Extra educational support")
-        famsup = st.checkbox("Family educational support")
-        activities = st.checkbox("Extra-curricular activities")
-
-        # Lifestyle
-        st.subheader("Lifestyle")
-        st.markdown("From 1 to 5 indicate how much you consider the following activities")
-
-        famrel = st.slider("Spending quality time with your family", 1, 5, value=3, help="From 1 - very bad to 5 - excellent")
-        freetime = st.slider("Free time after school", 1, 5, value=3, help="From 1 - very low to 5 - very high")
-        goout = st.slider("Going out with friends", 1, 5, value=3, help="From 1 - very low to 5 - very high")
-        dalc = st.slider("Workday alcohol consumption", 1, 5, value=1, help="From 1 - very low to 5 - very high")
-        walc = st.slider("Weekend alcohol consumption", 1, 5, value=1, help="From 1 - very low to 5 - very high")
-        health = st.slider("Current health status", 1, 5, value=3, help="From 1 - very bad to 5 - very good")
-        
-
-        submitted = st.form_submit_button("Submit")
-        if submitted:
-            data = {
-                'Student_P_ID': [student_ID],  
-                'DisplayName': [name],  
-                'sex': [sex],
-                'address': [address],
-                'famsize': [famsize],
-                'Pstatus': [pstatus],
-                'Medu': [medu],
-                'Fedu': [fedu],
-                'traveltime': [traveltime],
-                'studytime': [studytime],
-                'failures': [failures],
-                'schoolsup': [schoolsup],
-                'famsup': [famsup],
-                'activities': [activities],
-                'romantic': [romantic],
-                'famrel': [famrel],
-                'freetime': [freetime],
-                'goout': [goout],
-                'Dalc': [dalc],
-                'Walc': [walc],
-                'health': [health]
-            
-                # [student_ID, name, sex, address, famsize, pstatus, medu, fedu, traveltime, studytime, failures, schoolsup, famsup, activities, romantic, famrel, freetime, goout, dalc, walc, health]
-            }
-            replace_dict = {'Female': 0, 'Male': 1, 'Urban': 0, 'Rural': 1, 'less or equal to 3': 0, 'greater then 3': 1, 
-                            'Living together': 0, 'Living apart': 1, 'true': 1, 'false': 0,
-                            'None': 0, 'Primary education (4th grade)': 1, '5th to 9th grade': 2, 'Secondary education': 3, 'Higher education': 4}
-            df_submit = pd.DataFrame(data)
-            df_submit.replace(replace_dict, inplace=True)
-
-            # for prediction testing
-            Grade = 17 / 30     # needs to be normalized
-            df_pred = df_submit
-            df_pred['absences'] = 5
-            df_pred['AVG_G'] = Grade
-            df_pred = df_pred.drop(['Student_P_ID', 'DisplayName'], axis=1)
-            # st.write(df_submit)
-            # st.write(df_pred)
-
-            st.success("Form submitted successfully!")
-
-            pred_result = average_classification_result(df_submit=df_pred)           
-            
-            st.markdown("Prediction result if you have good chances to succeed with your studies:")
-            pred_dict = {0: 'No', 1: 'Yes'}
-            pred_result.replace(pred_dict, inplace=True)
-            st.write(pred_result.loc[0])
-
-def display_performance_graphs(data):
-    st.header("Student Performance Graphs")
-
-    # Overall Grade Distribution
-    st.subheader("Overall Grade Distribution")
-    fig, ax = plt.subplots()
-    sns.histplot(data=data, x="G3", bins=20, ax=ax)
-    ax.set_title("Distribution of Final Grades")
-    ax.set_xlabel("Final Grade")
-    ax.set_ylabel("Count")
-    st.pyplot(fig)
-
-    # Grade Distribution by School
-    st.subheader("Grade Distribution by School")
-    fig, ax = plt.subplots()
-    sns.histplot(data=data, x="G3", hue="school", bins=20, ax=ax)
-    ax.set_title("Final Grade Distribution by School")
-    ax.set_xlabel("Final Grade")
-    ax.set_ylabel("Count")
-    ax.legend(title="School")
-    st.pyplot(fig)
-
-    # Grade Distribution by Sex
-    st.subheader("Grade Distribution by Sex")
-    fig, ax = plt.subplots()
-    sns.histplot(data=data, x="G3", hue="sex", bins=20, ax=ax)
-    ax.set_title("Final Grade Distribution by Sex")
-    ax.set_xlabel("Final Grade")
-    ax.set_ylabel("Count")
-    ax.legend(title="Sex")
-    st.pyplot(fig)
+project_id = 'bdt-2024'
+dataset_id = 'Students_table_of_records'  
+table_id = 'students_data'
+service_account_path = '../cloud/bdt-2024-accesskey.json'
 
 def main():
     st.title("Welcome")
     st.subheader('Please provide your information below', divider='red')
-    create_student_form()
+    df_submit = create_student_form()
+    
+    if df_submit is not None:
+        st.subheader('Your Report:', divider='green')
+        pred_result = make_prediction(df_submit=df_submit)
+        st.write(pred_result.loc[0])
+        comparison = get_KPIs(df_submit=df_submit)
+
+def make_prediction(df_submit):
+    # for prediction
+    student_id = df_submit.loc[0,'Student_P_ID']
+    # print("student ID: " + student_id.astype(str))
+    avg_grade = grade_query(project_id, dataset_id, table_id, service_account_path, student_id)
+    total_absences = abseces_query(project_id, dataset_id, table_id, service_account_path, student_id)
+    total_failures = failure_query(project_id, dataset_id, table_id, service_account_path, student_id)
+
+    df_pred = df_submit
+    df_pred['absences'] = round(int(total_absences.loc[0, 'total_absences']) / 10)
+    df_pred['AVG_G'] = float(avg_grade.loc[0, 'weighted_average_grade']) / 30       # needs to be normalized
+    df_pred['failures'] = round(int(total_failures.loc[0, 'total_failures']) / 10)
+    df_pred = df_pred.drop(['Student_P_ID', 'DisplayName'], axis=1)
+
+    pred_result = average_classification_result(df_submit=df_pred)           
+    
+    st.markdown("Prediction result if you have good chances to succeed with your studies:")
+    pred_dict = {0: 'No', 1: 'Yes'}
+    pred_result.replace(pred_dict, inplace=True)
+
+    return pred_result
+
+def get_KPIs(df_submit):
+    student_id = df_submit.loc[0,'Student_P_ID']
+    print("student ID KPI: " + student_id.astype(str))
+    df_tor = students_query(project_id, dataset_id, table_id, service_account_path, student_id)
+    course_result, subject_result = calc_student_comparison(df=df_tor, student_id=student_id)
+
+    st.dataframe(data=course_result)
+    st.dataframe(data=subject_result)
+
+# def build_report():
+    # placeholder
+
 
 if __name__ == "__main__":
     main()
