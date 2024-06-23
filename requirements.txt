@@ -14,3 +14,8 @@ nbformat
 nbconvert
 faker
 google-cloud-storage
+google-cloud-bigquery
+google-auth
+google-api-core
+google-auth-oauthlib
+requests
