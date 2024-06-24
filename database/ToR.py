@@ -10,6 +10,7 @@ fake = Faker()
 
 con = duckdb.connect('database/students.duckdb')
 
+
 ### table with header
 
 con.execute("""
@@ -137,6 +138,7 @@ def insert_student_records():
 
     con.execute("COMMIT")
 
+        n = n + 1
 
         
 
@@ -193,6 +195,7 @@ for row in result:
 
 # Export table to CSV
 csv_export_query = "COPY students TO 'database/students.csv' (HEADER, DELIMITER ',')"
+
 con.execute(csv_export_query)
 
 con.close()
