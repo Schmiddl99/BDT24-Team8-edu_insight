@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))) # setting the path of this project one level up (otherwise it can't find other files)
+
 import json
 import pandas as pd
 from google.oauth2.service_account import Credentials
@@ -71,7 +75,7 @@ def students_query(project_id, dataset_id, table_id, service_account_path, stude
 
     return df_tor
 
-def abseces_query(project_id, dataset_id, table_id, service_account_path, student_id):
+def absences_query(project_id, dataset_id, table_id, service_account_path, student_id) -> int:
 
     with open(service_account_path, 'r') as f:
         service_account_info = json.load(f)
@@ -116,10 +120,13 @@ def abseces_query(project_id, dataset_id, table_id, service_account_path, studen
         records.append(record)
 
     total_absences = pd.DataFrame(records)
+    total_absences['total_absences'] = total_absences['total_absences'].astype(int)
+    total_absences = total_absences.loc[0, 'total_absences']
+    total_absences = int(total_absences / 10)
 
     return total_absences
 
-def grade_query(project_id, dataset_id, table_id, service_account_path, student_id):
+def grade_query(project_id, dataset_id, table_id, service_account_path, student_id) -> float:
 
     with open(service_account_path, 'r') as f:
         service_account_info = json.load(f)
@@ -164,10 +171,13 @@ def grade_query(project_id, dataset_id, table_id, service_account_path, student_
         records.append(record)
 
     avg_grade = pd.DataFrame(records)
+    avg_grade['weighted_average_grade'] = avg_grade['weighted_average_grade'].astype(float)
+    avg_grade = avg_grade.loc[0, 'weighted_average_grade']
+    avg_grade = float(avg_grade)
 
     return avg_grade
 
-def failure_query(project_id, dataset_id, table_id, service_account_path, student_id):
+def failure_query(project_id, dataset_id, table_id, service_account_path, student_id) -> int:
 
     with open(service_account_path, 'r') as f:
         service_account_info = json.load(f)
@@ -214,11 +224,36 @@ def failure_query(project_id, dataset_id, table_id, service_account_path, studen
         records.append(record)
 
     total_failures = pd.DataFrame(records)
+    total_failures['total_failures'] = total_failures['total_failures'].astype(int)
+    total_failures = total_failures.loc[0, 'total_failures']
+    total_failures = int(total_failures)
 
     return total_failures
 
+# ## for debugging purposes
 
-# print(df_tor)
-# print(avg_grade)
-# print(total_absences)
-# print(total_failures)
+# project_id = 'bdt-2024'
+# dataset_id = 'Students_table_of_records'  
+# table_id = 'students_rec'
+# if os.path.exists(os.path.join("cloud", "bdt-2024-accesskey.json")):
+#     service_account_path = os.path.join("cloud", "bdt-2024-accesskey.json")
+# else:
+#     service_account_path = '../cloud/bdt-2024-accesskey.json'
+# student_id = 2254
+
+# df_tor = students_query(project_id, dataset_id, table_id, service_account_path, student_id)
+# avg_grade = grade_query(project_id, dataset_id, table_id, service_account_path, student_id)
+# total_absences = absences_query(project_id, dataset_id, table_id, service_account_path, student_id)
+# total_failures = failure_query(project_id, dataset_id, table_id, service_account_path, student_id)
+
+# print(df_tor, "\n")
+# print(df_tor.dtypes, "\n")
+
+# print(avg_grade, "\n")
+# print(type(avg_grade), "\n")
+
+# print(total_absences, "\n")
+# print(type(total_absences), "\n")
+
+# print(total_failures, "\n")
+# print(type(total_failures), "\n")

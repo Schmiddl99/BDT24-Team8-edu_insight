@@ -8,13 +8,16 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from Machine_Learning.prediction import average_classification_result
 from streamlit_ui import create_student_form
-from cloud.students_query import students_query, grade_query, abseces_query, failure_query
+from cloud.students_query import students_query, grade_query, absences_query, failure_query
 from transformation.student_comparison import calc_student_comparison
 
 project_id = 'bdt-2024'
 dataset_id = 'Students_table_of_records'  
-service_account_path = os.path.join("cloud", "bdt-2024-accesskey.json")      #'../cloud/bdt-2024-accesskey.json'
 table_id = 'students_rec'
+if os.path.exists(os.path.join("cloud", "bdt-2024-accesskey.json")):
+    service_account_path = os.path.join("cloud", "bdt-2024-accesskey.json")
+else:
+    service_account_path = '../cloud/bdt-2024-accesskey.json'
 
 def main():
     st.title("Welcome")
@@ -32,13 +35,14 @@ def make_prediction(df_submit):
     student_id = df_submit.loc[0,'Student_P_ID']
     # print("student ID: " + student_id.astype(str))
     avg_grade = grade_query(project_id, dataset_id, table_id, service_account_path, student_id)
-    total_absences = abseces_query(project_id, dataset_id, table_id, service_account_path, student_id)
+    total_absences = absences_query(project_id, dataset_id, table_id, service_account_path, student_id)
     total_failures = failure_query(project_id, dataset_id, table_id, service_account_path, student_id)
+    print(avg_grade, total_absences, total_failures)
 
     df_pred = df_submit
-    df_pred['absences'] = round(int(total_absences.loc[0, 'total_absences']) / 10)
-    df_pred['AVG_G'] = float(avg_grade.loc[0, 'weighted_average_grade']) / 30       # needs to be normalized
-    df_pred['failures'] = round(int(total_failures.loc[0, 'total_failures']) / 10)
+    df_pred['absences'] = total_absences / 10
+    df_pred['AVG_G'] = avg_grade / 30      # needs to be normalized
+    df_pred['failures'] = total_failures
     df_pred = df_pred.drop(['Student_P_ID', 'DisplayName'], axis=1)
 
     pred_result = average_classification_result(df_submit=df_pred)           
