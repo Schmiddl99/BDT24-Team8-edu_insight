@@ -8,7 +8,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from Machine_Learning.prediction import average_classification_result
-# from streamlit_ui import create_student_form
 from cloud.students_query import students_query, grade_query, abseces_query, failure_query
 from scipy.stats import percentileofscore
 
@@ -17,7 +16,7 @@ pd.options.display.max_columns = None       # type: ignore
 project_id = 'bdt-2024'
 dataset_id = 'Students_table_of_records'  
 table_id = 'students_data'
-service_account_path = '../cloud/bdt-2024-accesskey.json'
+service_account_path = os.path.join("cloud", "bdt-2024-accesskey.json")
 
 
 def calc_student_comparison(df, student_id):

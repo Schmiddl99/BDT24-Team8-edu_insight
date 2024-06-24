@@ -14,7 +14,7 @@ from transformation.student_comparison import calc_student_comparison
 project_id = 'bdt-2024'
 dataset_id = 'Students_table_of_records'  
 table_id = 'students_data'
-service_account_path = '../cloud/bdt-2024-accesskey.json'
+service_account_path = os.path.join("cloud", "bdt-2024-accesskey.json")      #'../cloud/bdt-2024-accesskey.json'
 
 def main():
     st.title("Welcome")
