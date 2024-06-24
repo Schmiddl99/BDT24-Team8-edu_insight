@@ -12,7 +12,7 @@ from Machine_Learning.prediction import average_classification_result
 from cloud.students_query import students_query, grade_query, abseces_query, failure_query
 from scipy.stats import percentileofscore
 
-pd.options.display.max_columns = None
+pd.options.display.max_columns = None       # type: ignore
 
 project_id = 'bdt-2024'
 dataset_id = 'Students_table_of_records'  
@@ -44,7 +44,7 @@ def calc_student_comparison(df, student_id):
     course_grade_dist = [0 if np.isnan(x) else x for x in course_grade_dist]
     # print(course_grade_dist)
     
-    course_percentile = float(own_course_grade.loc[0, 'weighted_average_grade']) / max(course_grade_dist) * 100
+    course_percentile = float(own_course_grade.loc[0, 'weighted_average_grade']) / max(course_grade_dist) * 100     # type:ignore
     # print(course_percentile)
 
     course_result.append({

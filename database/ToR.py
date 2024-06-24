@@ -8,12 +8,12 @@ fake = Faker()
 
 ### creating and connecting to database
 
-con = duckdb.connect('students.duckdb')
+con = duckdb.connect('students700.duckdb')
 
 ### table with header
 
 con.execute("""
-            CREATE TABLE IF NOT EXISTS students (
+            CREATE OR REPLACE TABLE students (
             studentID INTEGER ,
             course_name VARCHAR ,
             subject VARCHAR ,
@@ -85,7 +85,8 @@ def random_exam_date():
 
 ### fictional data
 
-num_students = 100
+num_students = 700
+n = 1
 
 ### avoid duplicates in subject
 
@@ -108,23 +109,26 @@ for i in range(num_students):
     for i in range(num_exams):
         subject = random.choice(course_subjects[course_name])
 
-        while (studentID , subject) in inserted_records:
-            subject = random.choice(course_subjects[course_name])
-
-        subject_taken.add(subject)
-        inserted_records.add((studentID, subject))
+        ### adding credits only if exam passed
         semester = random.choice(semesters)
         grade = random.randint(0 , 31)
-        exam_date = random_exam_date()
-
-        ### adding credits only if exam passed
+        exam_date = random_exam_date()      
 
         credits = random.choice([6 , 9 , 12])
         credits_to_add = credits if grade >= 18 else 0
-        absences_lectures = random.randint(0 , 20)
+        passed = True if credits != 0 else False
+        absences_lectures = int(min(max(random.triangular(0, 20, 0), 0), 20))            # random.randint(0 , 20)
 
-        print(f"Inserting: {studentID}, {subject}, {course_name}, {semester}, {grade}, {exam_date}, {absences_lectures}, {credits_to_add}")
+        while (studentID , subject, passed) in inserted_records:
+            subject = random.choice(course_subjects[course_name])
 
+        subject_taken.add(subject)
+        inserted_records.add((studentID, subject, passed))
+        
+
+        print(f"Inserting {n}: {studentID}, {subject}, {course_name}, {semester}, {grade}, {exam_date}, {absences_lectures}, {credits_to_add}")
+
+        n = n + 1
 
         con.execute('''
                 INSERT INTO students (studentID , course_name , subject , semester , grade , exam_date , absences_lectures , credits)
@@ -140,7 +144,7 @@ con.execute("COMMIT")
 ### Verify if data has been inserted correctly
 
 result = con.execute('SELECT COUNT(*) FROM students').fetchone()
-print(f"Total records inserted: {result[0]}")
+print(f"Total records inserted: {result[0]}") # type: ignore
 
 
 ### Query the table and fetch all records
@@ -152,7 +156,7 @@ for row in result:
 
 ### table in csv
 
-csv_export_query = "COPY students TO 'students.csv' (HEADER, DELIMITER ',')"
+csv_export_query = "COPY students TO 'students700.csv' (HEADER, DELIMITER ',')"
 con.execute(csv_export_query)
 
 con.close()
