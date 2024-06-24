@@ -8,21 +8,20 @@ fake = Faker()
 
 ### creating and connecting to database
 
-con = duckdb.connect('students.duckdb')
+con = duckdb.connect('database/students.duckdb')
 
 ### table with header
 
 con.execute("""
             CREATE TABLE IF NOT EXISTS students (
-            studentID INTEGER ,
+            studentID INTEGER,
             course_name VARCHAR ,
             subject VARCHAR ,
             semester INTEGER ,
             grade INTEGER ,
             exam_date DATE ,
             absences_lectures INTEGER ,
-            credits INTEGER ,
-            PRIMARY KEY (studentID , subject)
+            credits INTEGER 
             )""")
 
 ### defining data
@@ -69,7 +68,31 @@ course_subjects = {
         "Abstract Algebra", "Differential Equations", "Mathematical Logic",
         "Real Analysis", "Complex Analysis", "Combinatorics",
         "Geometry", "Mathematical Modeling"
-    ] 
+    ] ,
+    "Chemistry": [
+        "Organic Chemistry", "Inorganic Chemistry", "Physical Chemistry", "Analytical Chemistry",
+        "Biochemistry", "Environmental Chemistry", "Materials Chemistry", "Quantum Chemistry",
+        "Chemical Engineering", "Polymer Chemistry", "Spectroscopy", "Chemical Thermodynamics",
+        "Electrochemistry", "Chemistry Lab Techniques", "Medicinal Chemistry", "Industrial Chemistry"
+    ],
+    "Psychology": [
+        "Introduction to Psychology", "Developmental Psychology", "Cognitive Psychology", "Social Psychology",
+        "Clinical Psychology", "Behavioral Neuroscience", "Research Methods", "Psychological Statistics",
+        "Abnormal Psychology", "Personality Psychology", "Health Psychology", "Educational Psychology",
+        "Forensic Psychology", "Industrial-Organizational Psychology", "Counseling Psychology", "Psychopharmacology"
+    ],
+    "Biology": [
+        "Cell Biology", "Genetics", "Microbiology", "Biochemistry",
+        "Ecology", "Evolutionary Biology", "Molecular Biology", "Physiology",
+        "Botany", "Zoology", "Immunology", "Developmental Biology",
+        "Marine Biology", "Neurobiology", "Biophysics", "Bioinformatics"
+    ],
+    "Electrical Engineering": [
+        "Circuits", "Electromagnetics", "Signals and Systems", "Digital Logic",
+        "Microelectronics", "Control Systems", "Power Systems", "Communication Systems",
+        "Embedded Systems", "VLSI Design", "Renewable Energy", "Robotics",
+        "Electromechanical Systems", "Network Analysis", "Digital Signal Processing", "Analog Circuits"
+    ]
 }
 
 semesters = [1 , 2 , 3 , 4]
@@ -85,74 +108,91 @@ def random_exam_date():
 
 ### fictional data
 
-num_students = 100
+num_students = 1000
 
-### avoid duplicates in subject
+def insert_student_records():
+    con.execute("BEGIN TRANSACTION")
 
-inserted_records = set()
+    for _ in range(num_students):
+        studentID = random.randint(1000, 9999)
+        course_name = random.choice(list(course_subjects.keys()))
+        max_exams_per_student = len(course_subjects[course_name])
+        num_exams = random.randint(1, max_exams_per_student)
 
-### Begin a transaction
-
-con.execute("BEGIN TRANSACTION")
-
-for i in range(num_students):
-    studentID = random.randint(1000 , 9999)
-    course_name = random.choice(list(course_subjects.keys()))
-    max_exams_per_student = len(course_subjects[course_name]) - 1
-    num_exams = random.randint(1, max_exams_per_student)
-
-    ### avoid duplicates
-
-    subject_taken = set()
-
-    for i in range(num_exams):
-        subject = random.choice(course_subjects[course_name])
-
-        while (studentID , subject) in inserted_records:
+        for _ in range(num_exams):
             subject = random.choice(course_subjects[course_name])
+            semester = random.choice(semesters)
+            grade = random.randint(0, 31)
+            exam_date = random_exam_date()
+            credits = random.choice([6, 9, 12])
+            credits_to_add = credits if grade >= 18 else 0
+            absences_lectures = int(min(max(random.triangular(0, 20, 0), 0), 20))
 
-        subject_taken.add(subject)
-        inserted_records.add((studentID, subject))
-        semester = random.choice(semesters)
-        grade = random.randint(0 , 31)
-        exam_date = random_exam_date()
+            print(f"Inserting: {studentID}, {subject}, {course_name}, {semester}, {grade}, {exam_date}, {absences_lectures}, {credits_to_add}")
 
-        ### adding credits only if exam passed
+            con.execute('''
+                INSERT INTO students (studentID, course_name, subject, semester, grade, exam_date, absences_lectures, credits)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            ''', (studentID, course_name, subject, semester, grade, exam_date, absences_lectures, credits_to_add))
 
-        credits = random.choice([6 , 9 , 12])
-        credits_to_add = credits if grade >= 18 else 0
-        absences_lectures = random.randint(0 , 20)
-
-        print(f"Inserting: {studentID}, {subject}, {course_name}, {semester}, {grade}, {exam_date}, {absences_lectures}, {credits_to_add}")
-
-
-        con.execute('''
-                INSERT INTO students (studentID , course_name , subject , semester , grade , exam_date , absences_lectures , credits)
-                VALUES (?, ? , ? , ? , ? , ? , ? , ?)
-        ''' , (studentID , course_name , subject , semester , grade , exam_date , absences_lectures , credits_to_add)
-        )
+    con.execute("COMMIT")
 
 
-### commit
+        
 
-con.execute("COMMIT")
+# Insert student records
+insert_student_records()
 
-### Verify if data has been inserted correctly
+# Remove duplicates
+con.execute("""
+    CREATE TABLE students_unique AS
+    SELECT DISTINCT ON (studentID, subject) *
+    FROM students
+    ORDER BY studentID, subject, exam_date DESC
+""")
 
+# Drop the original table and rename the new one
+con.execute("DROP TABLE students")
+con.execute("ALTER TABLE students_unique RENAME TO students")
+
+# Remove records with same studentID but different course_name
+# Create a temporary table with the records we want to keep
+con.execute("""
+    CREATE TEMPORARY TABLE students_to_keep AS
+    SELECT s1.*
+    FROM students s1
+    LEFT JOIN students s2
+    ON s1.studentID = s2.studentID AND s1.course_name > s2.course_name
+    WHERE s2.studentID IS NULL
+""")
+
+# Replace the contents of the original table with the records we want to keep
+con.execute("""
+    DELETE FROM students
+""")
+
+con.execute("""
+    INSERT INTO students
+    SELECT * FROM students_to_keep
+""")
+
+# Drop the temporary table
+con.execute("""
+    DROP TABLE students_to_keep
+""")
+
+# Verify if data has been inserted correctly
 result = con.execute('SELECT COUNT(*) FROM students').fetchone()
-print(f"Total records inserted: {result[0]}")
+print(f"Total records after removing duplicates: {result[0]}")
 
-
-### Query the table and fetch all records
-
+# Query the table and fetch all records
 result = con.execute('SELECT * FROM students').fetchall()
 
 for row in result:
     print(row)
 
-### table in csv
-
-csv_export_query = "COPY students TO 'students.csv' (HEADER, DELIMITER ',')"
+# Export table to CSV
+csv_export_query = "COPY students TO 'database/students.csv' (HEADER, DELIMITER ',')"
 con.execute(csv_export_query)
 
 con.close()

@@ -27,8 +27,8 @@ def upload_to_bucket(bucket_name, source_file_name, destination_blob_name, crede
         print(f"File {source_file_name} uploaded to {destination_blob_name}.")
 
 bucket_name = 'bdt-tor'
-source_file_name = '../database/students.csv'
-destination_blob_name = 'students_tor.csv'
-credentials_path = 'bdt-2024-accesskey.json'
+source_file_name = "../database/students.csv"
+destination_blob_name = 'students_records.csv'
+credentials_path = "bdt-2024-accesskey.json"
 
 upload_to_bucket(bucket_name, source_file_name, destination_blob_name, credentials_path)
