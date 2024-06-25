@@ -43,15 +43,18 @@ https://github.com/Schmiddl99/BDT24-Team8
 
 #### Build the Docker Image
 
-Build the Docker image using the `Dockerfile` provided in the repository:
+1. Navigate to your directory where the cloned repository is located.
+2. Build the Docker image using the `Dockerfile` provided in the repository:
 
 ```sh
+cd /your/directory/BDT-24-Team8
+
 docker build -t edu_insight .
 ```
 
 #### Run the Docker Container
 
-Run the Docker container to start the Streamlit application:
+3. Run the Docker container to start the Streamlit application:
 
 ```sh
 docker run -p 8501:8501 edu_insight
@@ -59,7 +62,7 @@ docker run -p 8501:8501 edu_insight
 
 ### Access the Application
 
-Open your web browser and navigate to http://localhost:8501 to access the Streamlit app.
+4. Open your web browser and navigate to http://localhost:8501 to access the Streamlit app.
 
 #### Example Users
 
@@ -68,6 +71,10 @@ We provide some Student IDs of example users:
 - 1104
 
 You can try it with different numbers (1000 - 9999) but that could result in an error if the Student_ID doesn't have any records.
+
+### Stopping the application
+
+5. Go back to the Terminal/Console where docker is running the application and press `CTRL + C`. Or go into the docker desktop application and hit the stop button on the image where it states `edu_insight`.
 
 
 ## Miscellaneous
