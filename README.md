@@ -27,7 +27,7 @@ This project presents EduInsight, a personalized education platform. It predicts
 * [x] setting up DuckDB
 * [x] connecting streamlit for user input and output
 * [ ] implementing document database like MongoDB for possible future exams
-
+* [ ] moving the Scikit-Learn ML-Algorithms to Apache Spark 
 ## Usage
 
 ### Prerequisites
@@ -46,7 +46,7 @@ https://github.com/Schmiddl99/BDT24-Team8
 Build the Docker image using the `Dockerfile` provided in the repository:
 
 ```sh
-docker build -t EduInsight .
+docker build -t edu_insight .
 ```
 
 #### Run the Docker Container
@@ -54,12 +54,23 @@ docker build -t EduInsight .
 Run the Docker container to start the Streamlit application:
 
 ```sh
-docker run -p 8501:8501 EduInsight
+docker run -p 8501:8501 edu_insight
 ```
 
-#### Access the Application
+### Access the Application
 
-Open your web browser and navigate to `http://localhost:8501` to access the Streamlit app.
+Open your web browser and navigate to http://localhost:8501 to access the Streamlit app.
+
+#### Example Users
+
+We provide some Student IDs of example users: 
+- 2254
+- 1104
+
+You can try it with different numbers (1000 - 9999) but that could result in an error.
+
+
+## Miscellaneous
 
 ### Project Dependencies
 
@@ -75,7 +86,9 @@ All project dependencies are listed in the `requirements.txt` file. When you bui
 
 If you encounter issues with missing files or directories, ensure that all necessary files are included in the repository and correctly referenced in the code.
 
-## Miscellaneous
+If you open the suggested address of `http://0.0.0.0:8501` it might not work because you have to open it on `http://localhost:8501`. 
+
+Also make sure that the port is free to access if you find yourself connected to an institution network.  
 
 ### License
 
