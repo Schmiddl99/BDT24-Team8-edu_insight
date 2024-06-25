@@ -28,6 +28,47 @@ This project presents EduInsight, a personalized education platform. It predicts
 * [x] connecting streamlit for user input and output
 * [ ] implementing document database like MongoDB for possible future exams
 * [ ] moving the Scikit-Learn ML-Algorithms to Apache Spark 
+* [ ] giving a more accurate prediction (in percentages)
+
+### File Structure
+
+#### cloud folder
+- `bdt-2024-accesskey.json` -> needed for accessing the Google Cloud Project
+- `bigquery_initializer.py` -> will move create a BigQuery table from the bucket that stores a CSV file with the student records
+- `bucket.py` -> will upload the CSV file with the student records to a bucket 
+- `students_query.py` -> includes all queries needed to gather the information for the prediction and report
+
+#### Data folder
+- `predict_student_performance folder` -> includes all data the data related to the prediction model
+
+#### database folder
+- `bdt.duckdb` -> DuckDB database with the table `student_perf` which stores the transformed data for the prediction model
+- `load_student_perf.py` -> loads the preprocessed CSV-files of the Data folder into the student_perf table; calls the transformation file `student_perf.py`
+- `ToR.py` -> faker file that is used to create the student records
+
+#### images folder
+- includes the images used in the report and the read.me
+
+#### machine_learning folder
+- includes different saved machine learning models in the Pickle format (.pkl)
+- `model.ipynb` -> trains different models on a parameter grid search and saves them as .pkl format
+- `prediction.py` -> calculates the prediction results of different models based on the user input 
+
+#### src folder
+- `main.py` -> main file that combines everything (This file is the one to execute in docker)
+- `streamlit_ui` -> includes the form and the report
+
+#### transformation folder
+- `student_comparison.py` -> calls the data needed to calculate the comparisons between course and subject colleagues, gives back a DataFrame with the own, avg., and every grade of the other students that attended the course.
+- `student_perf.py` -> concatenates and transforms the two student_*.csv files in the Data folder 
+
+#### Miscellaneous
+
+- `Dockerfile` -> Contains the instructions to build the Docker image.
+- `requirements.txt` -> Lists the Python dependencies required by the application.
+
+
+
 ## Usage
 
 ### Prerequisites
@@ -39,7 +80,7 @@ This project presents EduInsight, a personalized education platform. It predicts
 #### Clone the Repository
 
 First, clone the repository to your local machine: 
-https://github.com/Schmiddl99/BDT24-Team8 
+https://github.com/Schmiddl99/BDT24-Team8-edu_insight
 
 #### Build the Docker Image
 
@@ -82,12 +123,6 @@ You can try it with different numbers (1000 - 9999) but that could result in an 
 ### Project Dependencies
 
 All project dependencies are listed in the `requirements.txt` file. When you build the Docker image, these dependencies will be installed automatically.
-
-### File Structure
-
-- `Dockerfile`: Contains the instructions to build the Docker image.
-- `requirements.txt`: Lists the Python dependencies required by the application.
-- `src/main.py`: The main script that runs the Streamlit application.
 
 ### Troubleshooting
 
