@@ -38,8 +38,8 @@ This project presents EduInsight, a personalized education platform. It predicts
 - `bucket.py` -> will upload the CSV file with the student records to a bucket 
 - `students_query.py` -> includes all queries needed to gather the information for the prediction and report
 
-#### Data folder
-- `predict_student_performance folder` -> includes all data the data related to the prediction model
+#### Data/predict_student_performance folder folder
+- includes all data the data related to the prediction model
 
 #### database folder
 - `bdt.duckdb` -> DuckDB database with the table `student_perf` which stores the transformed data for the prediction model
