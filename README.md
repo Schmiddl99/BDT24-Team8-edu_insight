@@ -67,7 +67,7 @@ We provide some Student IDs of example users:
 - 2254
 - 1104
 
-You can try it with different numbers (1000 - 9999) but that could result in an error.
+You can try it with different numbers (1000 - 9999) but that could result in an error if the Student_ID doesn't have any records.
 
 
 ## Miscellaneous
