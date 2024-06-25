@@ -52,7 +52,7 @@ def calc_student_comparison(df, student_id):
     course_result.append({
                 'course_name': course_names[0],
                 'own_grade': own_course_grade,
-                'subject_grade_dist': course_grade_dist,
+                'course_grade_dist': course_grade_dist,
                 'percentile_course': round(course_percentile)
             })
 

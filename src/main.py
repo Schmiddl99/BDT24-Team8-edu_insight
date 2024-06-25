@@ -5,6 +5,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))) 
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 import seaborn as sns
 from Machine_Learning.prediction import average_classification_result
 from streamlit_ui import create_student_form
@@ -28,7 +29,11 @@ def main():
         st.subheader('Your Report:', divider='green')
         pred_result = make_prediction(df_submit=df_submit)
         st.write(pred_result.loc[0])
-        comparison = get_KPIs(df_submit=df_submit)
+        course_result, subject_result = get_KPIs(df_submit=df_submit)
+        st.dataframe(data=course_result)
+        st.dataframe(data=subject_result)
+        build_graph(course_result, subject_result)
+        
 
 def make_prediction(df_submit):
     # for prediction
@@ -59,11 +64,33 @@ def get_KPIs(df_submit):
     df_tor = students_query(project_id, dataset_id, table_id, service_account_path, student_id)
     course_result, subject_result = calc_student_comparison(df=df_tor, student_id=student_id)
 
-    st.dataframe(data=course_result)
-    st.dataframe(data=subject_result)
+    
+    
+    
+    return course_result, subject_result
+    
+    
 
-# def build_report():
-    # placeholder
+
+def build_graph(course_result, subject_result):
+    student_coursegrade= float(course_result.loc[0,"own_grade"])
+    course_distr= pd.DataFrame(course_result.at[0, "course_grade_dist"])
+    print("here are the datsets:",course_distr, student_coursegrade)
+    # Use Streamlit's built-in plotting
+    fig = plt.figure(figsize=(10, 6))
+    sns.histplot(data=course_distr, kde=True)
+    plt.axvline(student_coursegrade, color='red', linestyle='dashed', linewidth=2, label='Your Grade')
+    plt.title('Distribution of Final Grades')
+    plt.xlabel('Final Grade')
+    plt.ylabel('Count')
+    plt.legend()
+    
+    # Display the plot using Streamlit
+    st.pyplot(fig)
+    
+    
+    return 
+    
 
 
 if __name__ == "__main__":
