@@ -75,6 +75,8 @@ All project dependencies are listed in the `requirements.txt` file. When you bui
 
 If you encounter issues with missing files or directories, ensure that all necessary files are included in the repository and correctly referenced in the code.
 
+## Miscellaneous
+
 ### License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -82,8 +84,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ### Contributing
 
 Feel free to submit issues or pull requests if you have suggestions or improvements.
-
-```
-Replace the placeholders like `https://github.com/your-username/your-repo-name.git` with your actual GitHub repository URL.
-
-This `README.md` file provides clear instructions on how to set up and run the Streamlit app using Docker, making it easier for other developers to get started with your project.
