@@ -5,9 +5,9 @@ This project presents EduInsight, a personalized education platform. It predicts
 ## System Design
 
 ### Architecture
-
+#### Pipeline architecture of EduInsight
 ![Architecture of EduInsight](images/Architecture.png)
-
+#### Data Model of EduInsight
 ![Data Model of EduInsight](images/Data_Model.png)
 
 ### Technologies
