@@ -1,6 +1,33 @@
+import os
+import sys
 from google.cloud import bigquery
 from google.oauth2 import service_account
 from google.api_core.exceptions import NotFound
+
+# Ensure the environment variable is set
+service_account_path = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
+if not service_account_path:
+    raise ValueError("The GOOGLE_APPLICATION_CREDENTIALS environment variable is not set.")
+
+def create_authorized_session(service_account_path):
+    """
+    Creates an authorized session using the service account JSON file.
+
+    Args:
+        service_account_path (str): Path to the service account JSON file.
+
+    Returns:
+        Credentials: The credentials object for the service account.
+    """
+    with open(service_account_path, 'r') as f:
+        service_account_info = json.load(f)
+
+    # Define the required scopes
+    scopes = ["https://www.googleapis.com/auth/bigquery", "https://www.googleapis.com/auth/cloud-platform"]
+
+    # Create credentials using the service account key and the required scopes
+    return service_account.Credentials.from_service_account_info(service_account_info, scopes=scopes)
+
 
 def create_dataset_if_not_exists(client, dataset_id):
     """Create a BigQuery dataset if it does not exist."""
@@ -40,7 +67,15 @@ def create_table_if_not_exists(client, dataset_id, table_id, schema):
 def load_csv_to_bigquery(dataset_id, table_id, gcs_uri, credentials_path, schema):
     """Load a CSV file from Google Cloud Storage into a BigQuery table."""
 
-    credentials = service_account.Credentials.from_service_account_file(credentials_path)
+    # Ensure the environment variable is set
+    service_account_path = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
+    if not service_account_path:
+        raise ValueError("The GOOGLE_APPLICATION_CREDENTIALS environment variable is not set.")
+
+    # Create authorized session and get credentials
+    credentials = create_authorized_session(service_account_path)
+
+    # Initialize the BigQuery client
     client = bigquery.Client(credentials=credentials, project=credentials.project_id)
 
     create_dataset_if_not_exists(client, dataset_id)

@@ -7,8 +7,21 @@ import pandas as pd
 from google.oauth2.service_account import Credentials
 from google.auth.transport.requests import AuthorizedSession
 
-def students_query(project_id, dataset_id, table_id, service_account_path, student_id):
+# Ensure the environment variable is set
+service_account_path = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
+if not service_account_path:
+    raise ValueError("The GOOGLE_APPLICATION_CREDENTIALS environment variable is not set.")
 
+def create_authorized_session(service_account_path):
+    """
+    Creates an authorized session using the service account JSON file.
+
+    Args:
+        service_account_path (str): Path to the service account JSON file.
+
+    Returns:
+        AuthorizedSession: An authorized session for making authenticated requests.
+    """
     with open(service_account_path, 'r') as f:
         service_account_info = json.load(f)
 
@@ -19,7 +32,13 @@ def students_query(project_id, dataset_id, table_id, service_account_path, stude
     credentials = Credentials.from_service_account_info(service_account_info, scopes=scopes)
 
     # Create an authorized session
-    authorized_session = AuthorizedSession(credentials)
+    return AuthorizedSession(credentials)
+
+
+# Function to query students data
+def students_query(project_id, dataset_id, table_id, student_id):
+
+    authorized_session = create_authorized_session(service_account_path)
 
     # Define the API endpoint and parameters
     url = f'https://bigquery.googleapis.com/bigquery/v2/projects/{project_id}/queries'
@@ -75,19 +94,10 @@ def students_query(project_id, dataset_id, table_id, service_account_path, stude
 
     return df_tor
 
+# Function to query the total absences
 def absences_query(project_id, dataset_id, table_id, service_account_path, student_id) -> int:
 
-    with open(service_account_path, 'r') as f:
-        service_account_info = json.load(f)
-
-    # Define the required scopes
-    scopes = ["https://www.googleapis.com/auth/bigquery", "https://www.googleapis.com/auth/cloud-platform"]
-
-    # Create credentials using the service account key and the required scopes
-    credentials = Credentials.from_service_account_info(service_account_info, scopes=scopes)
-
-    # Create an authorized session
-    authorized_session = AuthorizedSession(credentials)
+    authorized_session = create_authorized_session(service_account_path)
 
     # Define the API endpoint and parameters
     url = f'https://bigquery.googleapis.com/bigquery/v2/projects/{project_id}/queries'
@@ -126,19 +136,10 @@ def absences_query(project_id, dataset_id, table_id, service_account_path, stude
 
     return total_absences
 
+# Function to query the average grade
 def grade_query(project_id, dataset_id, table_id, service_account_path, student_id) -> float:
 
-    with open(service_account_path, 'r') as f:
-        service_account_info = json.load(f)
-
-    # Define the required scopes
-    scopes = ["https://www.googleapis.com/auth/bigquery", "https://www.googleapis.com/auth/cloud-platform"]
-
-    # Create credentials using the service account key and the required scopes
-    credentials = Credentials.from_service_account_info(service_account_info, scopes=scopes)
-
-    # Create an authorized session
-    authorized_session = AuthorizedSession(credentials)
+    authorized_session = create_authorized_session(service_account_path)
 
     # Define the API endpoint and parameters
     url = f'https://bigquery.googleapis.com/bigquery/v2/projects/{project_id}/queries'
@@ -177,19 +178,11 @@ def grade_query(project_id, dataset_id, table_id, service_account_path, student_
 
     return avg_grade
 
+
+# Function to query the total failed exams
 def failure_query(project_id, dataset_id, table_id, service_account_path, student_id) -> int:
 
-    with open(service_account_path, 'r') as f:
-        service_account_info = json.load(f)
-
-    # Define the required scopes
-    scopes = ["https://www.googleapis.com/auth/bigquery", "https://www.googleapis.com/auth/cloud-platform"]
-
-    # Create credentials using the service account key and the required scopes
-    credentials = Credentials.from_service_account_info(service_account_info, scopes=scopes)
-
-    # Create an authorized session
-    authorized_session = AuthorizedSession(credentials)
+    authorized_session = create_authorized_session(service_account_path)
 
     # Define the API endpoint and parameters
     url = f'https://bigquery.googleapis.com/bigquery/v2/projects/{project_id}/queries'
