@@ -77,33 +77,19 @@ This project presents EduInsight, a personalized education platform. It predicts
 
 ### Getting Started
 
-#### Clone the Repository
-
-First, clone the repository to your local machine: 
-https://github.com/Schmiddl99/BDT24-Team8-edu_insight
-
-#### Build the Docker Image
-
-1. Navigate to your directory where the cloned repository is located.
-2. Build the Docker image using the `Dockerfile` provided in the repository:
-
-```sh
-cd /your/directory/BDT-24-Team8
-
-docker build -t edu_insight .
-```
+Because an IAM-Token is needed to run the application in connection with Google cloud services we have embedded the access file into the docker image. Therefore you only need to pull the image from dockerhub:
 
 #### Run the Docker Container
 
-3. Run the Docker container to start the Streamlit application:
+1. Run the Docker container to start the Streamlit application:
 
 ```sh
-docker run -p 8501:8501 edu_insight
+docker run -p 8501:8501 juliuss99/edu_insight:latest
 ```
 
 ### Access the Application
 
-4. Open your web browser and navigate to http://localhost:8501 to access the Streamlit app.
+2. Open your web browser and navigate to http://localhost:8501 to access the Streamlit app.
 
 #### Example Users
 
@@ -115,7 +101,7 @@ You can try it with different numbers (1000 - 9999) but that could result in an 
 
 ### Stopping the application
 
-5. Go back to the Terminal/Console where docker is running the application and press `CTRL + C`. Or go into the docker desktop application and hit the stop button on the image where it states `edu_insight`.
+3. Go back to the Terminal/Console where docker is running the application and press `CTRL + C`. Or go into the docker desktop application and hit the stop button on the image where it states `edu_insight`.
 
 
 ## Miscellaneous

@@ -31,7 +31,7 @@ def calc_student_comparison(df, student_id):
     subjects = student_df['subject'].unique()  
 
     ## course distribution
-    own_course_grade = grade_query(project_id, dataset_id, table_id, service_account_path, student_id)
+    own_course_grade = grade_query(project_id, dataset_id, table_id, student_id)
     # print('own course grade: ', own_course_grade)
 
     course_comp = df[df['course_name'] == str(course_names[0])]
