@@ -11,6 +11,9 @@ from google.auth.transport.requests import AuthorizedSession
 service_account_path = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
 if not service_account_path:
     raise ValueError("The GOOGLE_APPLICATION_CREDENTIALS environment variable is not set.")
+else: 
+    print("GOOGLE_APPLICATION_CREDENTIALS found.")
+
 
 def create_authorized_session(service_account_path):
     """

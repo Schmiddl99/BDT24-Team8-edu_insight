@@ -39,9 +39,9 @@ def make_prediction(df_submit):
     # for prediction
     student_id = df_submit.loc[0,'Student_P_ID']
     # print("student ID: " + student_id.astype(str))
-    avg_grade = grade_query(project_id, dataset_id, table_id, service_account_path, student_id)
-    total_absences = absences_query(project_id, dataset_id, table_id, service_account_path, student_id)
-    total_failures = failure_query(project_id, dataset_id, table_id, service_account_path, student_id)
+    avg_grade = grade_query(project_id, dataset_id, table_id, student_id)
+    total_absences = absences_query(project_id, dataset_id, table_id, student_id)
+    total_failures = failure_query(project_id, dataset_id, table_id, student_id)
     print(avg_grade, total_absences, total_failures)
 
     df_pred = df_submit
@@ -61,7 +61,7 @@ def make_prediction(df_submit):
 def get_KPIs(df_submit):
     student_id = df_submit.loc[0,'Student_P_ID']
     print("student ID KPI: " + student_id.astype(str))
-    df_tor = students_query(project_id, dataset_id, table_id, service_account_path, student_id)
+    df_tor = students_query(project_id, dataset_id, table_id, student_id)
     course_result, subject_result = calc_student_comparison(df=df_tor, student_id=student_id)
 
     
