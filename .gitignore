@@ -1,5 +1,8 @@
 # Ignore all .pyc files
 *.pyc
 
-# Optionally, ignore __pycache__ directories
+# ignore access token
+cloud/bdt-2024-accesskey.json
+
+# ignore __pycache__ directories
 __pycache__/
