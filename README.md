@@ -33,7 +33,7 @@ This project presents EduInsight, a personalized education platform. It predicts
 ### File Structure
 
 #### cloud folder
-- `bdt-2024-accesskey.json` -> needed for accessing the Google Cloud Project
+- `new_accesskey.json` -> needed for accessing the Google Cloud Project
 - `bigquery_initializer.py` -> will move create a BigQuery table from the bucket that stores a CSV file with the student records
 - `bucket.py` -> will upload the CSV file with the student records to a bucket 
 - `students_query.py` -> includes all queries needed to gather the information for the prediction and report

@@ -15,10 +15,10 @@ pd.options.display.max_columns = None       # type: ignore
 project_id = 'bdt-2024'
 dataset_id = 'Students_table_of_records'  
 table_id = 'students_rec'
-if os.path.exists(os.path.join("cloud", "bdt-2024-accesskey.json")):
-    service_account_path = os.path.join("cloud", "bdt-2024-accesskey.json")
+if os.path.exists(os.path.join("cloud", "new_accesskey.json")):
+    service_account_path = os.path.join("cloud", "new_accesskey.json")
 else:
-    service_account_path = '../cloud/bdt-2024-accesskey.json'
+    service_account_path = '../cloud/new_accesskey.json'
 
 
 def calc_student_comparison(df, student_id):

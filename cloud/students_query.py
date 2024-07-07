@@ -231,10 +231,10 @@ def failure_query(project_id, dataset_id, table_id, student_id) -> int:
 # project_id = 'bdt-2024'
 # dataset_id = 'Students_table_of_records'  
 # table_id = 'students_rec'
-# if os.path.exists(os.path.join("cloud", "bdt-2024-accesskey.json")):
-#     service_account_path = os.path.join("cloud", "bdt-2024-accesskey.json")
+# if os.path.exists(os.path.join("cloud", "new_accesskey.json")):
+#     service_account_path = os.path.join("cloud", "new_accesskey.json")
 # else:
-#     service_account_path = '../cloud/bdt-2024-accesskey.json'
+#     service_account_path = '../cloud/new_accesskey.json'
 # student_id = 2254
 
 # df_tor = students_query(project_id, dataset_id, table_id, student_id)

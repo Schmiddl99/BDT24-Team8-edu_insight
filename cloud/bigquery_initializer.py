@@ -100,7 +100,7 @@ def load_csv_to_bigquery(dataset_id, table_id, gcs_uri, credentials_path, schema
 dataset_id = 'Students_table_of_records'
 table_id = 'students_rec'
 gcs_uri = 'gs://bdt-tor/students_records.csv'
-credentials_path = 'bdt-2024-accesskey.json'
+credentials_path = 'new_accesskey.json'
 
 ### automatically get schema
 
