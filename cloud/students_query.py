@@ -95,7 +95,7 @@ def students_query(project_id, dataset_id, table_id, student_id):
     return df_tor
 
 # Function to query the total absences
-def absences_query(project_id, dataset_id, table_id, service_account_path, student_id) -> int:
+def absences_query(project_id, dataset_id, table_id, student_id) -> int:
 
     authorized_session = create_authorized_session(service_account_path)
 
@@ -137,7 +137,7 @@ def absences_query(project_id, dataset_id, table_id, service_account_path, stude
     return total_absences
 
 # Function to query the average grade
-def grade_query(project_id, dataset_id, table_id, service_account_path, student_id) -> float:
+def grade_query(project_id, dataset_id, table_id, student_id) -> float:
 
     authorized_session = create_authorized_session(service_account_path)
 
@@ -180,7 +180,7 @@ def grade_query(project_id, dataset_id, table_id, service_account_path, student_
 
 
 # Function to query the total failed exams
-def failure_query(project_id, dataset_id, table_id, service_account_path, student_id) -> int:
+def failure_query(project_id, dataset_id, table_id, student_id) -> int:
 
     authorized_session = create_authorized_session(service_account_path)
 
@@ -223,24 +223,24 @@ def failure_query(project_id, dataset_id, table_id, service_account_path, studen
 
     return total_failures
 
-# ## for debugging purposes
+## for debugging purposes
 
-# project_id = 'bdt-2024'
-# dataset_id = 'Students_table_of_records'  
-# table_id = 'students_rec'
+project_id = 'bdt-2024'
+dataset_id = 'Students_table_of_records'  
+table_id = 'students_rec'
 # if os.path.exists(os.path.join("cloud", "bdt-2024-accesskey.json")):
 #     service_account_path = os.path.join("cloud", "bdt-2024-accesskey.json")
 # else:
 #     service_account_path = '../cloud/bdt-2024-accesskey.json'
-# student_id = 2254
+student_id = 2254
 
-# df_tor = students_query(project_id, dataset_id, table_id, service_account_path, student_id)
-# avg_grade = grade_query(project_id, dataset_id, table_id, service_account_path, student_id)
-# total_absences = absences_query(project_id, dataset_id, table_id, service_account_path, student_id)
-# total_failures = failure_query(project_id, dataset_id, table_id, service_account_path, student_id)
+df_tor = students_query(project_id, dataset_id, table_id, student_id)
+avg_grade = grade_query(project_id, dataset_id, table_id, student_id)
+total_absences = absences_query(project_id, dataset_id, table_id, student_id)
+total_failures = failure_query(project_id, dataset_id, table_id, student_id)
 
-# print(df_tor, "\n")
-# print(df_tor.dtypes, "\n")
+print(df_tor, "\n")
+print(df_tor.dtypes, "\n")
 
 # print(avg_grade, "\n")
 # print(type(avg_grade), "\n")
